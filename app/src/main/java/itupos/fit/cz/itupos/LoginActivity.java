@@ -29,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 final String password = etPassword.getText().toString();
                 if (password.equals(VariableSingleton.WAITER_1) || password.equals(VariableSingleton.WAITER_2)) {
+                    VariableSingleton.InitializeTables();
                     Intent intent = new Intent(context, TablesActivity.class);
                     startActivity(intent);
                 } else {

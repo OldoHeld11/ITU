@@ -3,15 +3,14 @@ package itupos.fit.cz.itupos;
 import android.content.Context;
 import android.widget.Toast;
 
-/**
- * Created by oldo on 29.11.17.
- */
-
 public class VariableSingleton {
     private static VariableSingleton instance;
 
     public static final String WAITER_1 = "0000";
     public static final String WAITER_2 = "1111";
+
+    private static Table[] tables;
+
 
     private VariableSingleton(){}
 
@@ -27,4 +26,15 @@ public class VariableSingleton {
         Toast.makeText(context, "Singleton", Toast.LENGTH_LONG).show();
     }
 
+    public static Table[] InitializeTables(){
+        tables = new Table[15];
+        for(int i = 0; i < tables.length; i++){
+            tables[i] = new Table(i);
+        }
+        return tables;
+    }
+
+    public Table[] getTables() {
+        return tables;
+    }
 }
