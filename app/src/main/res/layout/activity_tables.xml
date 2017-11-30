@@ -1,20 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"><![CDATA[
-
-    "
-        3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id />
-]]>
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteY="81dp">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageView2"
+        android:layout_width="384dp"
+        android:layout_height="0dp"
+        android:contentDescription="TODO"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:color/holo_orange_light" />
+
+    <ImageView
+        android:id="@+id/stol_1"
+        android:layout_width="79dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="25dp"
+        android:adjustViewBounds="false"
+        android:contentDescription="@string/stol_1_name"
+        android:cropToPadding="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:color/holo_red_dark" />
+
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@android:color/holo_orange_light"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="145dp" />
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="19dp"
+        android:text="@string/stol_1_name"
+        app:layout_constraintBottom_toBottomOf="@+id/stol_1"
+        app:layout_constraintEnd_toEndOf="@+id/stol_1"
+        tools:text="@string/stol_1_name" />
+
 </android.support.constraint.ConstraintLayout>
