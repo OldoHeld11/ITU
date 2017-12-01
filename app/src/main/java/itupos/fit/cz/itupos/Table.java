@@ -27,8 +27,8 @@ public class Table {
         return isTaken;
     }
 
-    public void setTaken(boolean taken) {
-        isTaken = taken;
+    public void setTaken() {
+        isTaken = true;
     }
 
     public int getBeerOrders() {

@@ -1,15 +1,22 @@
 package itupos.fit.cz.itupos;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class SingleTableActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
+    private ImageView currentTableImage;
+    private Table currentTable;
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -17,14 +24,14 @@ public class SingleTableActivity extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+                case R.id.navigation_add:
+                    mTextMessage.setText(R.string.title_add);
                     return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
+                case R.id.navigation_order:
+                    mTextMessage.setText("Vypis aktualnych a priobjednanych veci");
                     return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                case R.id.navigation_payout:
+                    mTextMessage.setText(R.string.title_payout);
                     return true;
             }
             return false;
@@ -36,9 +43,20 @@ public class SingleTableActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_table);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        mTextMessage = (TextView) findViewById(R.id.message);
+
+        currentTable = VariableSingleton.getTables()[VariableSingleton.selectedTableId];
+        currentTableImage = VariableSingleton.selectedTableImage;
+
+        LinearLayout listLinear = findViewById(R.id.list_linear);
+        //listLinear.addView();
+
+        currentTable.setTaken();
+        if(currentTable.isTaken()){
+            currentTableImage.setColorFilter(Color.RED);
+        }
     }
 
 }

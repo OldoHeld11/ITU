@@ -1,6 +1,7 @@
 package itupos.fit.cz.itupos;
 
 import android.content.Context;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class VariableSingleton {
@@ -8,7 +9,8 @@ public class VariableSingleton {
 
     public static final String WAITER_1 = "0000";
     public static final String WAITER_2 = "1111";
-
+    public static int selectedTableId;
+    public static ImageView selectedTableImage;
     private static Table[] tables;
 
 
@@ -34,7 +36,7 @@ public class VariableSingleton {
         return tables;
     }
 
-    public Table[] getTables() {
+    public static Table[] getTables() {
         return tables;
     }
 }

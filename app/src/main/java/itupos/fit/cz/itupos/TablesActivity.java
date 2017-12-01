@@ -25,13 +25,15 @@ public class TablesActivity extends AppCompatActivity {
 
         context = this;
 
-        table1Image = findViewById(R.id.stol_1);
+        table1Image = findViewById(R.id.table_1);
 
         table1Image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, SingleTableActivity.class);
-                Toast.makeText(context, "STOOOOOOOOL JEDNA", Toast.LENGTH_LONG).show();
+                Toast.makeText(context, "Stol 1", Toast.LENGTH_LONG).show();
+                VariableSingleton.selectedTableId = 1;
+                VariableSingleton.selectedTableImage = table1Image;
                 startActivity(intent);
             }
 
