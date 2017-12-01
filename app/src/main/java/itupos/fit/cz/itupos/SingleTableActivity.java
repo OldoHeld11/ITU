@@ -1,6 +1,7 @@
 package itupos.fit.cz.itupos;
 
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
@@ -55,22 +56,29 @@ public class SingleTableActivity extends AppCompatActivity {
         currentTable = VariableSingleton.getTables()[VariableSingleton.selectedTableId];
        // currentTableImage = VariableSingleton.selectedTableImage;
 
+        /** simulacia akcii **/ // todo delete
         currentTable.setTaken();
         if(currentTable.isTaken()){
          //   currentTableImage.setColorFilter(Color.RED);
         }
+        currentTable.putOrder("Beer",4);
+        currentTable.putOrder("Pizza",2);
+        /**    **/
     }
 
     private void navigationAddSelectedAction(){
         LinearLayout listLinear = findViewById(R.id.list_linear);
         listLinear.removeAllViews();
-        TextView addedView  = new TextView(this);
-        int addedViewId = View.generateViewId();
-        addedView.setText("hallo hallo Pridavat");
-        //addedView.setTextAlignment();
-        addedView.setId(addedViewId);
-        addedView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-        listLinear.addView(addedView);
+        for(int i = 0; i < 2; i++){ // i < PocetTypovPoloziek (zatial pivo a kura)
+            TextView addedView  = new TextView(this);
+            int addedViewId = View.generateViewId();
+            addedView.setText("hallo hallo Pridavat");
+            //addedView.setTextAlignment();
+
+            addedView.setId(addedViewId);
+            addedView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+            listLinear.addView(addedView);
+        }
     }
 
     private void navigationPayOutSelectedAction(){
@@ -89,13 +97,18 @@ public class SingleTableActivity extends AppCompatActivity {
     private void navigationOrderSelectedAction(){
         LinearLayout listLinear = findViewById(R.id.list_linear);
         listLinear.removeAllViews();
-        TextView addedView  = new TextView(this);
-        int addedViewId = View.generateViewId();
-        addedView.setText("hallo hallo Order");
-        //addedView.setTextAlignment();
-        addedView.setId(addedViewId);
-        addedView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-        listLinear.addView(addedView);
+        for(int i = 0; i < 5; i++){
+            TextView addedView  = new TextView(this);
+            int addedViewId = View.generateViewId();
+            addedView.setText(VariableSingleton.menuItems.get(i));
+            //addedView.setText("Kurna");
+            addedView.setTextSize(17);
+            addedView.setTypeface(Typeface.DEFAULT_BOLD);
+            addedView.setId(addedViewId);
+            addedView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+            listLinear.addView(addedView);
+        }
+
     }
 
 }
