@@ -16,6 +16,7 @@ public class VariableSingleton {
 
     public static final String WAITER_1 = "0000";
     public static final String WAITER_2 = "1111";
+    public static  String Meno ;
     public static int selectedTableId;
     public static ImageView selectedTableImage;
     private static Table[] tables;
@@ -23,6 +24,9 @@ public class VariableSingleton {
     public static Map<String,Integer> menuItemsPrices = new HashMap<String, Integer>();
 
     private VariableSingleton(){}
+    public static void setName(String meno){
+        Meno=meno;
+    }
 
     public static VariableSingleton getInstance() {
         if (instance == null) {

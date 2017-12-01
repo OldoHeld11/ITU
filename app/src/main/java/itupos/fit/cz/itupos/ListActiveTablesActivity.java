@@ -6,8 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -15,7 +17,7 @@ import java.util.ArrayList;
 
 public class ListActiveTablesActivity extends AppCompatActivity {
     private Context context;
-
+    private TextView Login_meno;
 
 
     @Override
@@ -23,6 +25,9 @@ public class ListActiveTablesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_active_tables);
         context = this;
+
+        Login_meno = findViewById(R.id.tv_meno);
+        Login_meno.setText(VariableSingleton.Meno);
         VariableSingleton.getTables()[1].setTaken();
         VariableSingleton.getTables()[3].setTaken();
         VariableSingleton.getTables()[5].setTaken();

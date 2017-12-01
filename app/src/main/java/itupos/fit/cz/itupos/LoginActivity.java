@@ -28,11 +28,17 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final String password = etPassword.getText().toString();
-                if (password.equals(VariableSingleton.WAITER_1) || password.equals(VariableSingleton.WAITER_2)) {
+                if (password.equals(VariableSingleton.WAITER_1) ) {
+                    VariableSingleton.setName("Davidko");
                     VariableSingleton.InitializeTables();
                     Intent intent = new Intent(context, TablesActivity.class);
                     startActivity(intent);
-                } else {
+                }else  if (password.equals(VariableSingleton.WAITER_2) ) {
+                    VariableSingleton.setName("Oliverko");
+                    VariableSingleton.InitializeTables();
+                    Intent intent = new Intent(context, TablesActivity.class);
+                    startActivity(intent);
+                }  else {
                     VariableSingleton.getInstance().createToast(context);
                     Toast.makeText(context, "Chyba", Toast.LENGTH_LONG).show();
                 }
