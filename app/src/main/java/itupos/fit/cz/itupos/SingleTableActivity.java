@@ -53,11 +53,11 @@ public class SingleTableActivity extends AppCompatActivity {
         mTextMessage = (TextView) findViewById(R.id.message);
 
         currentTable = VariableSingleton.getTables()[VariableSingleton.selectedTableId];
-        currentTableImage = VariableSingleton.selectedTableImage;
+       // currentTableImage = VariableSingleton.selectedTableImage;
 
         currentTable.setTaken();
         if(currentTable.isTaken()){
-            currentTableImage.setColorFilter(Color.RED);
+         //   currentTableImage.setColorFilter(Color.RED);
         }
     }
 

@@ -19,6 +19,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:color/holo_orange_light" />
 
-    LinearLayout layout = (LinearLayout) findViewById(R.id.linearLayout);
+    <LinearLayout
+        android:id="@+id/rl_table_of_contents"
+        android:layout_width="272dp"
+        android:layout_height="386dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="47dp"
+        tools:layout_editor_absoluteY="56dp"></LinearLayout>
+
 
 </android.support.constraint.ConstraintLayout>

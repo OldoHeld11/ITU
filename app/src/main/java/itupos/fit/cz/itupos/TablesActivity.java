@@ -35,7 +35,7 @@ public class TablesActivity extends AppCompatActivity {
                 Intent intent = new Intent(context, SingleTableActivity.class);
                 Toast.makeText(context, "Stol 1", Toast.LENGTH_LONG).show();
                 VariableSingleton.selectedTableId = 1;
-                VariableSingleton.selectedTableImage = table1Image;
+              //  VariableSingleton.selectedTableImage = table1Image;
                 startActivity(intent);
             }
 
