@@ -1,5 +1,7 @@
 package itupos.fit.cz.itupos;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -19,6 +21,7 @@ public class SingleTableActivity extends AppCompatActivity {
     private TextView mTextMessage;
     private ImageView currentTableImage;
     private Table currentTable;
+    private Context context;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -26,18 +29,25 @@ public class SingleTableActivity extends AppCompatActivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Intent intent;
             switch (item.getItemId()) {
                 case R.id.navigation_add:
-                    mTextMessage.setText(R.string.title_add);
-                    navigationAddSelectedAction();
+                    //mTextMessage.setText("Vypis aktualnych a priobjednanych veci");
+                    //navigationOrderSelectedAction();
+                    intent = new Intent(context, SingleTableAddActivity.class);
+                    startActivity(intent);
                     return true;
                 case R.id.navigation_order:
-                    mTextMessage.setText("Vypis aktualnych a priobjednanych veci");
-                    navigationOrderSelectedAction();
+                    //mTextMessage.setText("Vypis aktualnych a priobjednanych veci");
+                    //navigationOrderSelectedAction();
+                    intent = new Intent(context, SingleTableFinishOrderActivity.class);
+                    startActivity(intent);
                     return true;
                 case R.id.navigation_payout:
-                    mTextMessage.setText(R.string.title_payout);
-                    navigationPayOutSelectedAction();
+                    //mTextMessage.setText(R.string.title_payout);
+                    //navigationPayOutSelectedAction();
+                    intent = new Intent(context, SingleTablePayOutActivity.class);
+                    startActivity(intent);
                     return true;
             }
             return false;
@@ -48,6 +58,7 @@ public class SingleTableActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_table);
+        context = this;
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -64,6 +75,21 @@ public class SingleTableActivity extends AppCompatActivity {
         currentTable.putOrder("Beer",4);
         currentTable.putOrder("Pizza",2);
         /**    **/
+
+        LinearLayout listLinear = findViewById(R.id.list_linear);
+
+        for(int i = 0; i < VariableSingleton.menuItems.size(); i++){
+            if(currentTable.getNumOfOrders(VariableSingleton.menuItems.get(i)) > 0){
+                TextView addedView  = new TextView(this);
+                int addedViewId = View.generateViewId();
+                addedView.setText(VariableSingleton.menuItems.get(i));
+                addedView.setTextSize(23);
+                addedView.setTypeface(Typeface.DEFAULT_BOLD);
+                addedView.setId(addedViewId);
+                addedView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                listLinear.addView(addedView);
+            }
+        }
     }
 
     private void navigationAddSelectedAction(){
@@ -97,12 +123,11 @@ public class SingleTableActivity extends AppCompatActivity {
     private void navigationOrderSelectedAction(){
         LinearLayout listLinear = findViewById(R.id.list_linear);
         listLinear.removeAllViews();
-        for(int i = 0; i < 5; i++){
+        for(int i = 0; i < VariableSingleton.menuItems.size(); i++){
             TextView addedView  = new TextView(this);
             int addedViewId = View.generateViewId();
             addedView.setText(VariableSingleton.menuItems.get(i));
-            //addedView.setText("Kurna");
-            addedView.setTextSize(17);
+            addedView.setTextSize(23);
             addedView.setTypeface(Typeface.DEFAULT_BOLD);
             addedView.setId(addedViewId);
             addedView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));

@@ -23,7 +23,31 @@
         <activity
             android:name=".SingleTableActivity"
             android:label="@string/title_activity_single_table" />
-        <activity android:name=".ListActiveTablesActivity"></activity>
+        <activity android:name=".ListActiveTablesActivity" />
+        <activity
+            android:name=".SingleTablePayOutActivity"
+            android:label="@string/title_activity_single_table_pay_out"
+            android:parentActivityName=".SingleTableActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="itupos.fit.cz.itupos.SingleTableActivity" />
+        </activity>
+        <activity
+            android:name=".SingleTableAddActivity"
+            android:label="@string/title_activity_single_table_add"
+            android:parentActivityName=".SingleTableActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="itupos.fit.cz.itupos.SingleTableActivity" />
+        </activity>
+        <activity
+            android:name=".SingleTableFinishOrderActivity"
+            android:label="@string/title_activity_single_table_finish_order"
+            android:parentActivityName=".SingleTableActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="itupos.fit.cz.itupos.SingleTableActivity" />
+        </activity>
     </application>
 
 </manifest>
