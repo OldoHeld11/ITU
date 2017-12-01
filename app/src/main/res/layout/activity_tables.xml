@@ -68,4 +68,14 @@
         app:layout_constraintStart_toEndOf="@+id/table_1"
         app:layout_constraintTop_toTopOf="@+id/table_2" />
 
+    <Button
+        android:id="@+id/btn_active_tables"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Active Tables"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/background_view" />
+
 </android.support.constraint.ConstraintLayout>

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -17,6 +18,7 @@ public class TablesActivity extends AppCompatActivity {
 
     private ImageView table1Image;
     private Context context;
+    private Button btn_active;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -38,6 +40,17 @@ public class TablesActivity extends AppCompatActivity {
             }
 
         });
+
+        btn_active = (findViewById(R.id.btn_active_tables));
+
+        btn_active.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,ListActiveTablesActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
 
 

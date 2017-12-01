@@ -4,6 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="itupos.fit.cz.itupos.ListActiveTablesActivity">
+    tools:context="itupos.fit.cz.itupos.ListActiveTablesActivity"
+    tools:ignore="ExtraText">
+
+
+    <ImageView
+        android:id="@+id/background_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="TODO"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:color/holo_orange_light" />
+
+    LinearLayout layout = (LinearLayout) findViewById(R.id.linearLayout);
 
 </android.support.constraint.ConstraintLayout>
