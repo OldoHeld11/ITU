@@ -22,7 +22,8 @@
         <activity android:name=".TablesActivity" />
         <activity
             android:name=".SingleTableActivity"
-            android:label="@string/title_activity_single_table"></activity>
+            android:label="@string/title_activity_single_table" />
+        <activity android:name=".ListActiveTablesActivity"></activity>
     </application>
 
 </manifest>
