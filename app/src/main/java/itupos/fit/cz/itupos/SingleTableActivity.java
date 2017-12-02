@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
@@ -15,6 +16,7 @@ import android.widget.ImageView;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 public class SingleTableActivity extends AppCompatActivity {
 
@@ -60,13 +62,18 @@ public class SingleTableActivity extends AppCompatActivity {
         setContentView(R.layout.activity_single_table);
         context = this;
 
+        /*mActionBarToolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
+        setSupportActionBar(mActionBarToolbar);
+        getSupportActionBar().setTitle("Table");*/
+        this.setTitle("Table " + VariableSingleton.selectedTableId);
+
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         mTextMessage = (TextView) findViewById(R.id.message);
 
-        currentTable = VariableSingleton.getTables()[VariableSingleton.selectedTableId];
+        currentTable = (VariableSingleton.getTables())[VariableSingleton.selectedTableId];
        // currentTableImage = VariableSingleton.selectedTableImage;
-
+       // getActionBar().setTitle(getString(R.string.table_title,VariableSingleton.selectedTableId));
         /** simulacia akcii **/ // todo delete
         currentTable.setTaken();
         if(currentTable.isTaken()){
@@ -77,14 +84,13 @@ public class SingleTableActivity extends AppCompatActivity {
         /**    **/
 
         LinearLayout listLinear = findViewById(R.id.list_linear);
-
         for(int i = 0; i < VariableSingleton.menuItems.size(); i++){
             if(currentTable.getNumOfOrders(VariableSingleton.menuItems.get(i)) > 0){
                 TextView addedView  = new TextView(this);
                 int addedViewId = View.generateViewId();
-                addedView.setText(VariableSingleton.menuItems.get(i));
-                addedView.setTextSize(23);
-                addedView.setTypeface(Typeface.DEFAULT_BOLD);
+                addedView.setText(getString(R.string.ordered_messagge, VariableSingleton.menuItems.get(i) , currentTable.getNumOfOrders(VariableSingleton.menuItems.get(i))));
+                addedView.setTextSize(20);
+                addedView.setTypeface(Typeface.DEFAULT);
                 addedView.setId(addedViewId);
                 addedView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                 listLinear.addView(addedView);
