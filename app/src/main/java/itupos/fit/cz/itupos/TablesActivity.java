@@ -17,7 +17,7 @@ import android.widget.Toast;
 public class TablesActivity extends AppCompatActivity {
 
     private ImageView table1Image;
-    private Context context;
+    private  Context context;
     private Button btn_active;
 
     @Override
@@ -28,6 +28,14 @@ public class TablesActivity extends AppCompatActivity {
         context = this;
 
         table1Image = findViewById(R.id.table_1);
+        VariableSingleton.getTables()[2].setTableView((ImageView) findViewById(R.id.table_2),context);
+        VariableSingleton.getTables()[3].setTableView((ImageView) findViewById(R.id.table_3),context);
+        VariableSingleton.getTables()[4].setTableView((ImageView) findViewById(R.id.table_4),context);
+        VariableSingleton.getTables()[5].setTableView((ImageView) findViewById(R.id.table_5),context);
+        VariableSingleton.getTables()[5].setTableView((ImageView) findViewById(R.id.table_6),context);
+        VariableSingleton.getTables()[6].setTableView((ImageView) findViewById(R.id.table_7),context);
+        VariableSingleton.getTables()[7].setTableView((ImageView) findViewById(R.id.table_8),context);
+        VariableSingleton.getTables()[8].setTableView((ImageView) findViewById(R.id.table_9),context);
 
         table1Image.setOnClickListener(new View.OnClickListener() {
             @Override

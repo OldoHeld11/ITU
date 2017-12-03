@@ -8,7 +8,7 @@ import android.widget.TextView;
 /**
  * Created by martin on 3.12.2017.
  */
-
+/*
 class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private Table table;
 
@@ -72,3 +72,4 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         return count;
     }
 }
+*/

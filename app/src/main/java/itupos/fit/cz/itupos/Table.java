@@ -1,12 +1,22 @@
 package itupos.fit.cz.itupos;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.Toast;
+import android.support.v7.app.AppCompatActivity;
+
+
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class Table {
     private boolean isTaken;
     private int tableNumber;
-
+    private ImageView tableView;
     private int totalCost;
 
     private Map<String,Integer> orders = new HashMap<String, Integer>();
@@ -76,5 +86,23 @@ public class Table {
 
     public int getTableNumber() {
         return tableNumber;
+    }
+
+    public ImageView getTableView() {
+        return tableView;
+    }
+
+    public void setTableView(ImageView tableView, final Context context) {
+        this.tableView = tableView;
+        tableView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, SingleTableActivity.class);
+                Toast.makeText(context, "Table "+ tableNumber, Toast.LENGTH_LONG).show();
+                VariableSingleton.selectedTableId = tableNumber;
+                context.startActivity(intent);
+            }
+
+        });
     }
 }

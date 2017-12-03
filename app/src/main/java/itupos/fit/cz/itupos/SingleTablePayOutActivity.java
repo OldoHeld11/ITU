@@ -51,8 +51,8 @@ public class SingleTablePayOutActivity extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mAdapter = new MyAdapter(VariableSingleton.currentTable);
-        mRecyclerView.setAdapter(mAdapter);
+      //  mAdapter = new MyAdapter(VariableSingleton.currentTable);
+      //  mRecyclerView.setAdapter(mAdapter);
     }
 
 }
