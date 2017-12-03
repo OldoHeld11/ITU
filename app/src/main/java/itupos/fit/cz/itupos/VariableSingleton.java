@@ -14,6 +14,7 @@ public class VariableSingleton {
     public static Menu myMenu;
     public static MyTable[] myTables;
     public static MyTable currentMyTable;
+    public static String aha[] = {"aha1", "aha2"};
 
     public static void myInit(){
         myMenu = new Menu();

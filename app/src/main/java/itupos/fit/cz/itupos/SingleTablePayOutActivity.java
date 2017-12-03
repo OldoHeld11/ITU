@@ -1,16 +1,18 @@
 package itupos.fit.cz.itupos;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-public class SingleTablePayOutActivity extends AppCompatActivity {
-    private RecyclerView mRecyclerView;
+public class SingleTablePayOutActivity extends Activity {
+    private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
@@ -26,7 +28,7 @@ public class SingleTablePayOutActivity extends AppCompatActivity {
                     mTextMessage.setText(R.string.title_add);
                     return true;
                 case R.id.navigation_order:
-                    mTextMessage.setText("Vypis aktualnych a priobjednanych veci3");
+                    mTextMessage.setText(R.string.title_add);
                     return true;
                 case R.id.navigation_payout:
                     mTextMessage.setText(R.string.title_add);
@@ -46,13 +48,14 @@ public class SingleTablePayOutActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         // recycle viewer
-        mRecyclerView.setHasFixedSize(true); // maybe delete?
-
-        mLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(mLayoutManager);
-
-      //  mAdapter = new MyAdapter(VariableSingleton.currentTable);
-      //  mRecyclerView.setAdapter(mAdapter);
+        mAdapter = new MyAdapter(VariableSingleton.currentMyTable);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(mAdapter);
+        VariableSingleton.myInit();
+        mAdapter.notifyDataSetChanged();
     }
 
 }

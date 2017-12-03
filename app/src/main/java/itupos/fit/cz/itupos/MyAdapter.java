@@ -4,54 +4,54 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.view.View;
+
+import java.util.List;
 
 /**
  * Created by martin on 3.12.2017.
  */
 
-class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
-    private Table table;
+class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+    private MyTable table;
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public class MyViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         public TextView mTextView;
-        public ViewHolder(TextView v) {
+        public MyViewHolder(View v) {
             super(v);
-            mTextView = v;
+            mTextView = (TextView) itemView.findViewById(R.id.title);
         }
     }
 
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(Table table) {
+    public MyAdapter(MyTable table) {
         this.table = table;
     }
 
     // Create new views (invoked by the layout manager)
     @Override
-    public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
+    public MyViewHolder onCreateViewHolder(ViewGroup parent,
                                                    int viewType) {
-        // create a new view
-        TextView v = (TextView) LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.activity_single_table_pay_out, parent, false);
-        // set the view's size, margins, paddings and layout parameters
-        //...
-        ViewHolder vh = new ViewHolder(v);
-        return vh;
+        View itemView = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.my_text_view, parent, false);
+
+        return new MyViewHolder(itemView);
     }
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(MyViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.mTextView.setText(VariableSingleton.currentMyTable.orders.getAllOrders().get(position).getName());
-
+        Orders orders = table.orders;
+        holder.mTextView.setText(orders.getAllOrders().get(position).getName());
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return VariableSingleton.currentMyTable.orders.getOrdersCount();
+        return table.orders.getOrdersCount();
     }
 }
