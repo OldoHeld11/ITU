@@ -1,6 +1,7 @@
 package itupos.fit.cz.itupos;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -17,6 +18,7 @@ public class SingleTablePayOutActivity extends Activity {
     private RecyclerView.LayoutManager mLayoutManager;
 
     private TextView mTextMessage;
+    private Context context;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -42,6 +44,9 @@ public class SingleTablePayOutActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_table_pay_out);
+        context = this;
+
+        this.setTitle("Table " + VariableSingleton.selectedTableId);
 
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);

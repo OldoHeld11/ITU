@@ -47,6 +47,7 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         // - replace the contents of the view with that element
         Orders orders = table.orders;
         holder.mTextView.setText(orders.getAllOrders().get(position).getName());
+
     }
 
     // Return the size of your dataset (invoked by the layout manager)
