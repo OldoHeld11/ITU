@@ -1,11 +1,13 @@
 package itupos.fit.cz.itupos;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -37,7 +39,7 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                                                    int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
-        View itemView = inflater.inflate(R.layout.my_text_view, parent, false); //zmenit my_text_view, je to layout, zmenit idcka
+        final View itemView = inflater.inflate(R.layout.my_text_view, parent, false); //zmenit my_text_view, je to layout, zmenit idcka
 
         return new MyViewHolder(itemView);
     }
@@ -57,4 +59,6 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public int getItemCount() {
         return table.orders.getOrdersCount();
     } // pocet poloziek
+
+
 }

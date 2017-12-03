@@ -23,8 +23,8 @@ public class VariableSingleton {
         }
 
         myMenu = new Menu();
-        myMenu.setMenuItem("burger", 50);
         myMenu.setMenuItem("pizza", 40);
+        myMenu.setMenuItem("burger", 50);
         myMenu.setMenuItem("burger2", 50);
         myMenu.setMenuItem("pizza2", 40);
         myMenu.setMenuItem("burger3", 50);
