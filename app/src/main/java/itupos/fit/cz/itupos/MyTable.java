@@ -44,9 +44,12 @@ public class MyTable{
 
     public void setTableView(ImageView tableView, final Context context) {
         this.tableView = tableView;
+        final MyTable thisTable = this;
         tableView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                VariableSingleton.currentMyTable = thisTable;
+
                 Intent intent = new Intent(context, SingleTableActivity.class);
                 Toast.makeText(context, "Table "+ tableNumber, Toast.LENGTH_LONG).show();
                 VariableSingleton.selectedTableId = tableNumber;

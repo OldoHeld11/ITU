@@ -28,17 +28,13 @@ public class ListActiveTablesActivity extends AppCompatActivity {
 
         Login_meno = findViewById(R.id.tv_meno);
         Login_meno.setText(VariableSingleton.Meno);
-        VariableSingleton.getTables()[1].setTaken();
-        VariableSingleton.getTables()[3].setTaken();
-        VariableSingleton.getTables()[5].setTaken();
-
 
             //test creating of dynamic buttons
             Button[] myButton = new Button[16];
             LinearLayout scrViewButLay = (LinearLayout) findViewById(R.id.rl_table_of_contents);
-            for(int index = 0; index < 15; index++) {
+            for(int index = 1; index <= 13; index++) {
 
-                if(VariableSingleton.getTables()[index].isTaken()) {
+                if(VariableSingleton.myTables[index].isTaken()) {
                     myButton[index] = new Button(this);//initialize the button here
                     myButton[index].setText("Table " + index);
                     final int finalI = index;

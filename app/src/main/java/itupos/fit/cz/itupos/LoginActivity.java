@@ -29,13 +29,13 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 final String password = etPassword.getText().toString();
                 if (password.equals(VariableSingleton.WAITER_1) ) {
+                    VariableSingleton.myInit();
                     VariableSingleton.setName("Davidko");
-                    VariableSingleton.InitializeTables();
                     Intent intent = new Intent(context, TablesActivity.class);
                     startActivity(intent);
                 }else  if (password.equals(VariableSingleton.WAITER_2) ) {
+                    VariableSingleton.myInit();
                     VariableSingleton.setName("Oliverko");
-                    VariableSingleton.InitializeTables();
                     Intent intent = new Intent(context, TablesActivity.class);
                     startActivity(intent);
                 }  else {
