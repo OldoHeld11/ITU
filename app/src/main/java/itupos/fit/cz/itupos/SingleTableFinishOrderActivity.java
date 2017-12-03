@@ -22,9 +22,9 @@ public class SingleTableFinishOrderActivity extends AppCompatActivity {
                 case R.id.navigation_add:
                     mTextMessage.setText(R.string.title_add);
                     return true;
-                case R.id.navigation_order:
+                /*case R.id.navigation_order:
                     mTextMessage.setText(R.string.title_add);
-                    return true;
+                    return true;*/
                 case R.id.navigation_payout:
                     mTextMessage.setText(R.string.title_payout);
                     return true;

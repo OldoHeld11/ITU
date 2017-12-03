@@ -69,27 +69,13 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/stol_1_value"
-        android:textSize="30sp"
+        android:textColor="@android:color/black"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="@+id/table_1"
         app:layout_constraintEnd_toEndOf="@+id/table_1"
         app:layout_constraintStart_toStartOf="@+id/table_1"
         app:layout_constraintTop_toTopOf="@+id/table_1" />
 
-    <TextView
-        android:id="@+id/table_6_text"
-        android:layout_width="17dp"
-        android:layout_height="32dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="6"
-        android:textColor="@android:color/background_dark"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/table_6"
-        app:layout_constraintEnd_toEndOf="@+id/table_6"
-        app:layout_constraintStart_toStartOf="@+id/table_6"
-        app:layout_constraintTop_toTopOf="@+id/table_6" />
 
     <ImageView
         android:id="@+id/table_4"
@@ -144,7 +130,42 @@
         android:layout_marginStart="144dp"
         app:layout_constraintBottom_toTopOf="@+id/table_8"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_my_circle" />
+        app:srcCompat="@drawable/ic_my_circle"/>
+
+    <TextView
+        android:id="@+id/table_9_text"
+        android:layout_width="17dp"
+        android:layout_height="34dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="9"
+        android:textColor="@android:color/black"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/table_9"
+        app:layout_constraintEnd_toEndOf="@+id/table_9"
+        app:layout_constraintStart_toStartOf="@+id/table_9"
+        app:layout_constraintTop_toTopOf="@+id/table_9" />
+
+
+    <TextView
+        android:id="@+id/table_8_text"
+        android:layout_width="17dp"
+        android:layout_height="34dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="8"
+        android:textColor="@android:color/black"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/table_8"
+        app:layout_constraintEnd_toEndOf="@+id/table_8"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="@+id/table_8"
+        app:layout_constraintTop_toTopOf="@+id/table_8" />
+
 
     <ImageView
         android:id="@+id/table_3"
@@ -175,6 +196,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/stol_4_value"
+        android:textColor="@android:color/black"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="@+id/table_4"
         app:layout_constraintEnd_toEndOf="@+id/table_4"
@@ -190,6 +212,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/stol_3_value"
+        android:textColor="@android:color/black"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="@+id/table_3"
         app:layout_constraintEnd_toEndOf="@+id/table_3"
@@ -205,6 +228,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="2"
+        android:textColor="@android:color/black"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="@+id/table_2"
         app:layout_constraintEnd_toEndOf="@+id/table_2"
@@ -227,9 +251,10 @@
         android:layout_height="84dp"
         android:rotation="90"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/architectural_plan_door"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintVertical_bias="0.498"
+        app:srcCompat="@drawable/architectural_plan_door" />
 
     <ImageView
         android:id="@+id/imageView_bar"
@@ -239,24 +264,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.678"
-        app:srcCompat="@android:color/darker_gray" />
+        app:srcCompat="@android:color/darker_gray"
 
-    <TextView
-        android:id="@+id/bartext"
-        android:layout_width="40dp"
-        android:layout_height="104dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginTop="8dp"
-        android:rotation="90"
-        android:text="BAR"
-        android:textAlignment="center"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView_bar"
-        app:layout_constraintEnd_toEndOf="@+id/imageView_bar"
-        app:layout_constraintTop_toTopOf="@+id/imageView_bar" />
+
+    />/>
+
 
     <ImageView
         android:id="@+id/table_6"
@@ -264,11 +276,30 @@
         android:layout_height="110dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/imageView_bar"
         app:layout_constraintEnd_toStartOf="@+id/imageView_bar"
         app:layout_constraintTop_toTopOf="@+id/imageView_bar"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@android:color/holo_red_dark" />
+        app:srcCompat="@android:color/holo_red_dark"/>
+
+
+    <TextView
+        android:id="@+id/table_6_text"
+        android:layout_width="21dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:text="6"
+        android:textColor="@android:color/background_dark"
+        android:textSize="25sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/table_6"
+        app:layout_constraintStart_toStartOf="@+id/table_6"
+        app:layout_constraintTop_toTopOf="@+id/table_6"
+        app:layout_constraintVertical_bias="0.451" />
+
+    />
 
     <ImageView
         android:id="@+id/table_7"
@@ -282,6 +313,24 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView_bar"
         app:srcCompat="@android:color/holo_red_dark" />
 
+    <TextView
+        android:id="@+id/table_7_text"
+        android:layout_width="21dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="7"
+        android:textColor="@android:color/background_dark"
+        android:textSize="25sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/table_7"
+        app:layout_constraintEnd_toEndOf="@+id/table_7"
+        app:layout_constraintStart_toStartOf="@+id/table_7"
+        app:layout_constraintTop_toTopOf="@+id/table_7"
+        app:layout_constraintVertical_bias="1.0" />
+
+
     <ImageView
         android:id="@+id/table_5"
         android:layout_width="61dp"
@@ -290,6 +339,39 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView_bar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:color/holo_red_dark" />
+        app:srcCompat="@android:color/holo_red_dark"/>
+
+    <TextView
+        android:id="@+id/table_5_text"
+        android:layout_width="19dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="5"
+        android:textColor="@android:color/background_dark"
+        android:textSize="25sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/table_5"
+        app:layout_constraintEnd_toEndOf="@+id/table_5"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="@+id/table_5"
+        app:layout_constraintTop_toTopOf="@+id/table_5"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="BAR"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_bar"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_bar"
+        app:layout_constraintStart_toStartOf="@+id/imageView_bar"
+        app:layout_constraintTop_toTopOf="@+id/imageView_bar" />
 
 </android.support.constraint.ConstraintLayout>

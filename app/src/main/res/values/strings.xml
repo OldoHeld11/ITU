@@ -20,7 +20,8 @@
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_single_table_add">SingleTableAddActivity</string>
     <string name="title_activity_single_table_finish_order">SingleTableFinishOrderActivity</string>
-    <string name="ordered_messagge">Item: %1$s - Quantity: %2$d</string>
+    <string name="ordered_messagge_header">Item\t Quantity</string>
+    <string name="ordered_messagge">%1$s\t %2$d</string>
     <string name="table_title">Table %1$d</string>
     <string name="aha">Aha %1$d</string>
 </resources>

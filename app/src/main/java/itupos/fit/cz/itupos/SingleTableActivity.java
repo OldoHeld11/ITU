@@ -2,21 +2,16 @@ package itupos.fit.cz.itupos;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 public class SingleTableActivity extends AppCompatActivity {
 
@@ -38,12 +33,12 @@ public class SingleTableActivity extends AppCompatActivity {
                     intent = new Intent(context, SingleTableAddActivity.class);
                     startActivity(intent);
                     return true;
-                case R.id.navigation_order:
+               /* case R.id.navigation_order:
                     //mTextMessage.setText("Vypis aktualnych a priobjednanych veci");
                     //navigationOrderSelectedAction();
                     intent = new Intent(context, SingleTableFinishOrderActivity.class);
                     startActivity(intent);
-                    return true;
+                    return true;*/
                 case R.id.navigation_payout:
                     //mTextMessage.setText(R.string.title_payout);
                     //navigationPayOutSelectedAction();
@@ -87,24 +82,41 @@ public class SingleTableActivity extends AppCompatActivity {
         /**    **/
 
         VariableSingleton.myInit();
-        LinearLayout listLinear = findViewById(R.id.list_linear);
-        for(int i = 0; i < VariableSingleton.menuItems.size(); i++){
-            if(VariableSingleton.currentTable.getNumOfOrders(VariableSingleton.menuItems.get(i)) > 0){
-                TextView addedView  = new TextView(this);
-                int addedViewId = View.generateViewId();
-                //addedView.setText(getString(R.string.ordered_messagge, VariableSingleton.menuItems.get(i) , VariableSingleton.currentTable.getNumOfOrders(VariableSingleton.menuItems.get(i))));
-                addedView.setText(getString(R.string.ordered_messagge, VariableSingleton.myTables[0].orders.getOrder("burger").getName() , VariableSingleton.myTables[0].orders.getOrder("burger").getTotalPrice()));
-                addedView.setTextSize(20);
-                addedView.setTypeface(Typeface.DEFAULT);
-                addedView.setId(addedViewId);
-                addedView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                listLinear.addView(addedView);
-            }
+        LinearLayout listLinear = findViewById(R.id.list_linear_right);
+        TextView addedViewMain  = new TextView(this);
+        addedViewMain.setText("Item");
+        addedViewMain.setTextSize(18);
+        addedViewMain.setTypeface(Typeface.DEFAULT_BOLD);
+        addedViewMain.setId(View.generateViewId());
+        addedViewMain.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        listLinear.addView(addedViewMain);
+
+
+        for(Order order : VariableSingleton.currentMyTable.orders.getAllOrders()){
+            TextView addedViewLeft  = new TextView(this);
+            int addedViewLeftId = View.generateViewId();
+            addedViewLeft.setText(order.getName());
+            addedViewLeft.setTextSize(18);
+            addedViewLeft.setTypeface(Typeface.DEFAULT);
+            addedViewLeft.setId(addedViewLeftId);
+            addedViewLeft.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+            listLinear.addView(addedViewLeft);
+
+            TextView addedViewRight  = new TextView(this);
+            int addedViewRightId = View.generateViewId();
+            addedViewRight.setText(String.format("%d",order.getAmount()));
+            addedViewRight.setTextSize(18);
+            addedViewRight.setTypeface(Typeface.DEFAULT);
+            addedViewRight.setId(addedViewRightId);
+            addedViewRight.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+            listLinear.addView(addedViewRight);
+
+
         }
     }
 
     private void navigationAddSelectedAction(){
-        LinearLayout listLinear = findViewById(R.id.list_linear);
+        LinearLayout listLinear = findViewById(R.id.list_linear_right);
         listLinear.removeAllViews();
         for(int i = 0; i < 2; i++){ // i < PocetTypovPoloziek (zatial pivo a kura)
             TextView addedView  = new TextView(this);
@@ -119,7 +131,7 @@ public class SingleTableActivity extends AppCompatActivity {
     }
 
     private void navigationPayOutSelectedAction(){
-        LinearLayout listLinear = findViewById(R.id.list_linear);
+        LinearLayout listLinear = findViewById(R.id.list_linear_right);
         listLinear.removeAllViews();
         TextView addedView  = new TextView(this);
         int addedViewId = View.generateViewId();
@@ -132,7 +144,7 @@ public class SingleTableActivity extends AppCompatActivity {
 
 
     private void navigationOrderSelectedAction(){
-        LinearLayout listLinear = findViewById(R.id.list_linear);
+        LinearLayout listLinear = findViewById(R.id.list_linear_right);
         listLinear.removeAllViews();
         for(int i = 0; i < VariableSingleton.menuItems.size(); i++){
             TextView addedView  = new TextView(this);
