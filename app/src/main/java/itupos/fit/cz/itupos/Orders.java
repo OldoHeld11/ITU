@@ -5,8 +5,14 @@ import java.util.ArrayList;
 public class Orders{
     private ArrayList<Order> orders;
 
+    public int getTotalCost() {
+        return totalCost;
+    }
+
+    private int totalCost;
+
     public Orders() {
-        this.orders = new ArrayList<Order>();
+        this.orders = new ArrayList<Order>(); this.totalCost = 0;
     }
 
     public Integer getOrdersCount(){
@@ -17,6 +23,7 @@ public class Orders{
     public void setOrder(String name, Integer amount){
         if(this.getOrder(name) == null) {
             orders.add(new Order(name, amount));
+            this.totalCost += this.getOrder(name).getTotalPrice();
         }else{
             this.changeOrderAmount(name, this.getOrder(name).getAmount() + amount);
         }
@@ -25,6 +32,7 @@ public class Orders{
     public void removeOrder(String name){
         for(Order o : orders){
             if(o.getName().equals(name)){
+                this.totalCost -= this.getOrder(name).getTotalPrice();
                 orders.remove(o);
             }
         }
@@ -37,7 +45,11 @@ public class Orders{
                 if(amount <= 0){
                     orders.remove(o);
                 }else{
+                    // substract original price
+                    this.totalCost -= this.getOrder(name).getTotalPrice();
                     o.setAmount(amount);
+                    // add new total price
+                    this.totalCost += this.getOrder(name).getTotalPrice();
                 }
             }
         }

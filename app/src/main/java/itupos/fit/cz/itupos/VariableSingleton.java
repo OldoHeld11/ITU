@@ -10,20 +10,24 @@ import java.util.Map;
 
 public class VariableSingleton {
 
-    // ide to aj lepsie
+    // ide to aj lepsie //////////////////////////////////////////////////////////
     public static Menu myMenu;
     public static MyTable[] myTables;
+    public static MyTable currentMyTable;
+
     public static void myInit(){
         myMenu = new Menu();
         myMenu.setMenuItem("burger", 50);
         myMenu.setMenuItem("pizza", 40);
         myTables = new MyTable[15];
         myTables[0] = new MyTable(1);
+        currentMyTable = myTables[0];
         myTables[0].orders.setOrder("burger", 2);
         myTables[0].orders.setOrder("pizza", 1);
         myTables[0].orders.removeOrder("pizza");
         myTables[0].orders.changeOrderAmount("burger", 1);
     }
+/////////////////////////////////////////////////////////////////////////////////
 
     private static VariableSingleton instance;
 

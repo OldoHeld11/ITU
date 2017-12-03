@@ -8,7 +8,7 @@ import android.widget.TextView;
 /**
  * Created by martin on 3.12.2017.
  */
-/*
+
 class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private Table table;
 
@@ -45,31 +45,13 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        int count = 0;
-        int positionInMap = 0;
-        for(int i = 0; i < VariableSingleton.menuItems.size(); i++){
-            if(VariableSingleton.currentTable.getNumOfOrders(VariableSingleton.menuItems.get(i)) > 0){
-                count++;
-            }
-            if(count == position) {
-                positionInMap = i;
-                break;
-            }
-        }
-        //holder.mTextView.setText(VariableSingleton.menuItems.get(VariableSingleton.currentTable.getNumOfOrders(positionInMap)));
+        holder.mTextView.setText(VariableSingleton.currentMyTable.orders.getAllOrders().get(position).getName());
 
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        int count = 0;
-        for(int i = 0; i < VariableSingleton.menuItems.size(); i++){
-            if(VariableSingleton.currentTable.getNumOfOrders(VariableSingleton.menuItems.get(i)) > 0){
-                count++;
-            }
-        }
-        return count;
+        return VariableSingleton.currentMyTable.orders.getOrdersCount();
     }
 }
-*/
