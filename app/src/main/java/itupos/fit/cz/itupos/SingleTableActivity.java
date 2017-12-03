@@ -72,17 +72,18 @@ public class SingleTableActivity extends AppCompatActivity {
 
         VariableSingleton.currentTable = (VariableSingleton.getTables())[VariableSingleton.selectedTableId];
         // currentTableImage = VariableSingleton.selectedTableImage;
-       // getActionBar().setTitle(getString(R.string.table_title,VariableSingleton.selectedTableId));
+        // getActionBar().setTitle(getString(R.string.table_title,VariableSingleton.selectedTableId));
+
         /** simulacia akcii **/ // todo delete
         VariableSingleton.currentTable.setTaken();
         if(VariableSingleton.currentTable.isTaken()){
          //   currentTableImage.setColorFilter(Color.RED);
         }
         VariableSingleton.currentTable.putOrder("Beer",4);
-       VariableSingleton.currentTable.putOrder("Pizza",2);
-       VariableSingleton.currentTable.hasBeenPaid("Beer",1);
-       VariableSingleton.currentTable.hasBeenPaid("Pizza");
-       VariableSingleton.currentTable.putOrder("Pizza",1);
+        VariableSingleton.currentTable.putOrder("Pizza",2);
+        VariableSingleton.currentTable.hasBeenPaid("Beer",1);
+        VariableSingleton.currentTable.hasBeenPaid("Pizza");
+        VariableSingleton.currentTable.putOrder("Pizza",1);
         /**    **/
 
         LinearLayout listLinear = findViewById(R.id.list_linear);

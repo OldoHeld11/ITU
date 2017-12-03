@@ -4,6 +4,10 @@
     <string name="stol_1_value">1</string>
     <string name="stol_2_name">Stol 2</string>
     <string name="stol_2_value">2</string>
+    <string name="stol_3_name">Stol 3</string>
+    <string name="stol_3_value">3</string>
+    <string name="stol_4_name">Stol 4</string>
+    <string name="stol_4_value">4</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_single_table">Table</string>
     <string name="title_add">Add Item</string>

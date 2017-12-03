@@ -8,64 +8,207 @@
 
     <ImageView
         android:id="@+id/background_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:contentDescription="TODO"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:color/holo_orange_light" />
+        app:srcCompat="@android:color/holo_orange_light"
+        tools:layout_editor_absoluteX="0dp" />
+
 
     <ImageView
         android:id="@+id/table_1"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginStart="38dp"
+        android:layout_width="109dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="44dp"
         android:adjustViewBounds="false"
         android:contentDescription="@string/stol_1_name"
         android:cropToPadding="false"
-        app:layout_constraintBottom_toBottomOf="@+id/table_2"
-        app:layout_constraintEnd_toStartOf="@+id/table_2_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/table_2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:color/holo_red_dark" />
+
+    <ImageView
+        android:id="@+id/table_10"
+        android:layout_width="109dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="36dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:adjustViewBounds="false"
+        android:contentDescription="@string/stol_1_name"
+        android:cropToPadding="false"
+        app:layout_constraintBottom_toTopOf="@+id/table_11"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:color/holo_red_dark" />
+
+    <ImageView
+        android:id="@+id/table_11"
+        android:layout_width="109dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:adjustViewBounds="false"
+        android:contentDescription="@string/stol_1_name"
+        android:cropToPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@android:color/holo_red_dark" />
 
     <TextView
         android:id="@+id/table_1_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="83dp"
-        android:layout_marginStart="67dp"
+        android:layout_width="17dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="@string/stol_1_value"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/table_1"
-        app:layout_constraintEnd_toStartOf="@+id/table_2"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/table_1"
+        app:layout_constraintStart_toStartOf="@+id/table_1"
+        app:layout_constraintTop_toTopOf="@+id/table_1" />
+
+    <TextView
+        android:id="@+id/table_6_text"
+        android:layout_width="17dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="6"
+        android:textColor="@android:color/background_dark"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/table_6"
+        app:layout_constraintEnd_toEndOf="@+id/table_6"
+        app:layout_constraintStart_toStartOf="@+id/table_6"
+        app:layout_constraintTop_toTopOf="@+id/table_6" />
+
+    <ImageView
+        android:id="@+id/table_4"
+        android:layout_width="71dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.714"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/table_3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_my_circle" />
+
+    <ImageView
+        android:id="@+id/table_8"
+        android:layout_width="71dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="144dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/door_entrance"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_my_circle" />
+
+    <ImageView
+        android:id="@+id/table_12"
+        android:layout_width="71dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginStart="144dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_my_circle" />
+
+    <ImageView
+        android:id="@+id/table_13"
+        android:layout_width="71dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="144dp"
+        app:layout_constraintBottom_toTopOf="@+id/table_12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_my_circle" />
+
+    <ImageView
+        android:id="@+id/table_9"
+        android:layout_width="71dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginStart="144dp"
+        app:layout_constraintBottom_toTopOf="@+id/table_8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_my_circle" />
+
+    <ImageView
+        android:id="@+id/table_3"
+        android:layout_width="54dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintStart_toEndOf="@+id/table_2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_my_circle" />
 
     <ImageView
         android:id="@+id/table_2"
-        android:layout_width="0dp"
-        android:layout_height="75dp"
-        android:layout_marginEnd="140dp"
-        android:layout_marginTop="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/table_1_text"
+        android:layout_width="50dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintStart_toEndOf="@+id/table_1"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_my_circle" />
 
     <TextView
+        android:id="@+id/table_4_text"
+        android:layout_width="17dp"
+        android:layout_height="34dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/stol_4_value"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/table_4"
+        app:layout_constraintEnd_toEndOf="@+id/table_4"
+        app:layout_constraintStart_toStartOf="@+id/table_4"
+        app:layout_constraintTop_toTopOf="@+id/table_4" />
+
+    <TextView
+        android:id="@+id/table_3_text"
+        android:layout_width="18dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/stol_3_value"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/table_3"
+        app:layout_constraintEnd_toEndOf="@+id/table_3"
+        app:layout_constraintStart_toStartOf="@+id/table_3"
+        app:layout_constraintTop_toTopOf="@+id/table_3" />
+
+    <TextView
         android:id="@+id/table_2_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="170dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/stol_2_value"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/table_1"
+        android:layout_width="17dp"
+        android:layout_height="34dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="2"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/table_2"
+        app:layout_constraintEnd_toEndOf="@+id/table_2"
+        app:layout_constraintStart_toStartOf="@+id/table_2"
         app:layout_constraintTop_toTopOf="@+id/table_2" />
 
     <Button
@@ -76,6 +219,77 @@
         android:layout_marginEnd="8dp"
         android:text="Active Tables"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/background_view" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/door_entrance"
+        android:layout_width="84dp"
+        android:layout_height="84dp"
+        android:rotation="90"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/architectural_plan_door"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <ImageView
+        android:id="@+id/imageView_bar"
+        android:layout_width="60dp"
+        android:layout_height="128dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.678"
+        app:srcCompat="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/bartext"
+        android:layout_width="40dp"
+        android:layout_height="104dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginTop="8dp"
+        android:rotation="90"
+        android:text="BAR"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_bar"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_bar"
+        app:layout_constraintTop_toTopOf="@+id/imageView_bar" />
+
+    <ImageView
+        android:id="@+id/table_6"
+        android:layout_width="28dp"
+        android:layout_height="110dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_bar"
+        app:layout_constraintEnd_toStartOf="@+id/imageView_bar"
+        app:layout_constraintTop_toTopOf="@+id/imageView_bar"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@android:color/holo_red_dark" />
+
+    <ImageView
+        android:id="@+id/table_7"
+        android:layout_width="61dp"
+        android:layout_height="34dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_bar"
+        app:srcCompat="@android:color/holo_red_dark" />
+
+    <ImageView
+        android:id="@+id/table_5"
+        android:layout_width="61dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:color/holo_red_dark" />
 
 </android.support.constraint.ConstraintLayout>
