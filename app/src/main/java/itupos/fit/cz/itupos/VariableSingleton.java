@@ -22,6 +22,8 @@ public class VariableSingleton {
     private static Table[] tables;
     public static Map<Integer,String> menuItems = new HashMap<Integer, String>();
     public static Map<String,Integer> menuItemsPrices = new HashMap<String, Integer>();
+    public static Table currentTable;
+
 
     private VariableSingleton(){}
     public static void setName(String meno){

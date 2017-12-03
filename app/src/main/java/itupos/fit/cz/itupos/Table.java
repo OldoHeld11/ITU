@@ -1,6 +1,5 @@
 package itupos.fit.cz.itupos;
 
-import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,22 +10,15 @@ import java.util.Map;
 public class Table {
     private boolean isTaken;
     private int tableNumber;
-    private int waterOrders;
-    private int beerOrders;
-    private int roastChickenOrders;
 
-    private int beerPrice = 35;
-    private int roastChickenPrice = 320;
     private int totalCost;
 
     private Map<String,Integer> orders = new HashMap<String, Integer>();
+    private Map<String,Integer> paidItems = new HashMap<String, Integer>();
 
     public Table(int TableNo) {
         this.isTaken = false;
         this.tableNumber = TableNo;
-        this.waterOrders = 0;
-        this.beerOrders = 0;
-        this.roastChickenOrders = 0;
         this.totalCost = 0;
     }
 
@@ -38,39 +30,8 @@ public class Table {
         isTaken = true;
     }
 
-    public int getBeerOrders() {
-        return beerOrders;
-    }
 
-    public int getTotalCost() {
-        return totalCost;
-    }
 
-    public void OrderBeers(int beerOrders) {
-        if(beerOrders >= 1){
-            this.beerOrders = beerOrders;
-            totalCost += beerOrders * beerPrice;
-
-        }
-    }
-
-    public void OrderRoastChicken() {
-        roastChickenOrders++;
-        totalCost += roastChickenPrice;
-    }
-
-    public void OrderRoastChickens(int roastChickenOrders) {
-        if(roastChickenOrders >= 1){
-            this.roastChickenOrders = roastChickenOrders;
-            totalCost += roastChickenOrders * roastChickenPrice;
-        }
-    }
-
-    public void putOrder(String item){
-        Integer ordersCount = orders.get(item);
-        orders.put(item, ordersCount == null ? 1 : ordersCount + 1);
-        totalCost += VariableSingleton.menuItemsPrices.get(item);
-    }
 
     public void putOrder(String item, Integer count){
         if(count > 0){
@@ -85,9 +46,36 @@ public class Table {
     }
 
 
-    public void OrderBeer() {
-        beerOrders++;
-        totalCost += beerPrice;
+    public Integer getNumOfPaidItems(String item) {
+        return (paidItems.get(item) == null) ? 0 : paidItems.get(item);
+    }
+
+
+    /*
+    * "Zaplatia" sa vsetky polozky daneho itemu, ak nejake vobec su.
+    * Navratova hodnota je pocet kolko sa vyplatilo alebo null ak takato polozka nebola objednana.
+    * Znizi sa aj celkovy ucet stolu
+    * **/
+    public Integer hasBeenPaid(String item){
+        Integer removedCount = orders.remove(item);
+        if(removedCount == null) return null;
+        totalCost -= ( removedCount * VariableSingleton.menuItemsPrices.get(item) ) ;
+        return removedCount;
+    }
+
+    /*
+    * "Zaplati" sa [count] poloziek daneho itemu.
+    * Znizi sa aj celkovy ucet stolu.
+    **/
+    public void hasBeenPaid(String item, Integer count){
+        Integer ordersCount = orders.get(item);
+        if(ordersCount == null) return;
+        if(ordersCount <= count){
+            hasBeenPaid(item);
+        } else {
+            orders.put(item, ordersCount - count);
+            totalCost -= VariableSingleton.menuItemsPrices.get(item) * count;
+        }
     }
 
     public int getTableNumber() {

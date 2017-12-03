@@ -22,7 +22,6 @@ public class SingleTableActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
     private ImageView currentTableImage;
-    private Table currentTable;
     private Context context;
 
 
@@ -71,24 +70,27 @@ public class SingleTableActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         mTextMessage = (TextView) findViewById(R.id.message);
 
-        currentTable = (VariableSingleton.getTables())[VariableSingleton.selectedTableId];
-       // currentTableImage = VariableSingleton.selectedTableImage;
+        VariableSingleton.currentTable = (VariableSingleton.getTables())[VariableSingleton.selectedTableId];
+        // currentTableImage = VariableSingleton.selectedTableImage;
        // getActionBar().setTitle(getString(R.string.table_title,VariableSingleton.selectedTableId));
         /** simulacia akcii **/ // todo delete
-        currentTable.setTaken();
-        if(currentTable.isTaken()){
+        VariableSingleton.currentTable.setTaken();
+        if(VariableSingleton.currentTable.isTaken()){
          //   currentTableImage.setColorFilter(Color.RED);
         }
-        currentTable.putOrder("Beer",4);
-        currentTable.putOrder("Pizza",2);
+        VariableSingleton.currentTable.putOrder("Beer",4);
+       VariableSingleton.currentTable.putOrder("Pizza",2);
+       VariableSingleton.currentTable.hasBeenPaid("Beer",1);
+       VariableSingleton.currentTable.hasBeenPaid("Pizza");
+       VariableSingleton.currentTable.putOrder("Pizza",1);
         /**    **/
 
         LinearLayout listLinear = findViewById(R.id.list_linear);
         for(int i = 0; i < VariableSingleton.menuItems.size(); i++){
-            if(currentTable.getNumOfOrders(VariableSingleton.menuItems.get(i)) > 0){
+            if(VariableSingleton.currentTable.getNumOfOrders(VariableSingleton.menuItems.get(i)) > 0){
                 TextView addedView  = new TextView(this);
                 int addedViewId = View.generateViewId();
-                addedView.setText(getString(R.string.ordered_messagge, VariableSingleton.menuItems.get(i) , currentTable.getNumOfOrders(VariableSingleton.menuItems.get(i))));
+                addedView.setText(getString(R.string.ordered_messagge, VariableSingleton.menuItems.get(i) , VariableSingleton.currentTable.getNumOfOrders(VariableSingleton.menuItems.get(i))));
                 addedView.setTextSize(20);
                 addedView.setTypeface(Typeface.DEFAULT);
                 addedView.setId(addedViewId);
