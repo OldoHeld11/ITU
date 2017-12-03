@@ -27,6 +27,7 @@ public class VariableSingleton {
         myTables[0].orders.setOrder("pizza", 1);
         myTables[0].orders.removeOrder("pizza");
         myTables[0].orders.changeOrderAmount("burger", 1);
+        myTables[0].orders.setOrder("pizza", 2);
     }
 /////////////////////////////////////////////////////////////////////////////////
 
