@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Menu{
     private ArrayList<MenuItem> menu;
 
-    public Menu(ArrayList<MenuItem> menu) {
+    public Menu() {
         this.menu = new ArrayList<MenuItem>();
     }
 
@@ -41,5 +41,9 @@ public class Menu{
             }
         }
         return 0;
+    }
+
+    public ArrayList<MenuItem> getAllMenuItems(){
+        return menu;
     }
 }

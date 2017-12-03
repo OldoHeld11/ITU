@@ -7,12 +7,22 @@ public class MyTable{
     private int tableNumber;
     private int totalCost;
 
-    private Orders orders;
-    private Orders ordersPaid;
+    public Orders orders;
+    public Orders ordersPaid;
 
-    void aha(){
-
+    public MyTable(int tableNumber) {
+        this.isTaken = false;
+        this.tableNumber = tableNumber;
+        this.totalCost = 0;
+        this.orders = new Orders();
+        this.ordersPaid = new Orders();
     }
 
+    public boolean isTaken() {
+        return isTaken;
+    }
 
+    public void setTaken() {
+        isTaken = true;
+    }
 }

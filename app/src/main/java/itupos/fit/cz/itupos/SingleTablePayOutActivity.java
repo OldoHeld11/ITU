@@ -26,10 +26,10 @@ public class SingleTablePayOutActivity extends AppCompatActivity {
                     mTextMessage.setText(R.string.title_add);
                     return true;
                 case R.id.navigation_order:
-                    mTextMessage.setText("Vypis aktualnych a priobjednanych veci");
+                    mTextMessage.setText("Vypis aktualnych a priobjednanych veci3");
                     return true;
                 case R.id.navigation_payout:
-                    mTextMessage.setText(R.string.title_payout);
+                    mTextMessage.setText(R.string.title_add);
                     return true;
             }
             return false;

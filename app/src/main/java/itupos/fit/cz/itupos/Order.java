@@ -1,11 +1,16 @@
 package itupos.fit.cz.itupos;
 
 public class Order{
+    private String name;
+    private Integer totalPrice;
+    private Integer amount;
 
     public Order(String name, Integer amount) {
-        this.name = name;
-        this.amount = amount;
-        this.totalPrice = VariableSingleton.myMenu.getMenuItemPrice(this.getName()) * amount;
+        if(VariableSingleton.myMenu.getMenuItem(name) != null) {
+            this.name = name;
+            this.amount = amount;
+            this.totalPrice = VariableSingleton.myMenu.getMenuItemPrice(this.getName()) * amount;
+        }
     }
 
     public String getName() {
@@ -32,8 +37,4 @@ public class Order{
         this.amount = amount;
         this.setTotalPrice(VariableSingleton.myMenu.getMenuItemPrice(this.getName()) * amount);
     }
-
-    private String name;
-    private Integer totalPrice;
-    private Integer amount;
 }

@@ -12,9 +12,18 @@ public class VariableSingleton {
 
     // ide to aj lepsie
     public static Menu myMenu;
-    public Orders orders;
-    public Orders ordersPaid;
-
+    public static MyTable[] myTables;
+    public static void myInit(){
+        myMenu = new Menu();
+        myMenu.setMenuItem("burger", 50);
+        myMenu.setMenuItem("pizza", 40);
+        myTables = new MyTable[15];
+        myTables[0] = new MyTable(1);
+        myTables[0].orders.setOrder("burger", 2);
+        myTables[0].orders.setOrder("pizza", 1);
+        myTables[0].orders.removeOrder("pizza");
+        myTables[0].orders.changeOrderAmount("burger", 1);
+    }
 
     private static VariableSingleton instance;
 
@@ -27,7 +36,6 @@ public class VariableSingleton {
     public static Map<Integer,String> menuItems = new HashMap<Integer, String>();
     public static Map<String,Integer> menuItemsPrices = new HashMap<String, Integer>();
     public static Table currentTable;
-
 
     private VariableSingleton(){}
     public static void setName(String meno){

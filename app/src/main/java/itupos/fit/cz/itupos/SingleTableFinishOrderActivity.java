@@ -23,7 +23,7 @@ public class SingleTableFinishOrderActivity extends AppCompatActivity {
                     mTextMessage.setText(R.string.title_add);
                     return true;
                 case R.id.navigation_order:
-                    mTextMessage.setText("Vypis aktualnych a priobjednanych veci");
+                    mTextMessage.setText(R.string.title_add);
                     return true;
                 case R.id.navigation_payout:
                     mTextMessage.setText(R.string.title_payout);

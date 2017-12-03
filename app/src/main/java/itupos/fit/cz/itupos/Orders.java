@@ -13,8 +13,13 @@ public class Orders{
         return orders.size();
     }
 
+    // if there is already order with the same name then sum amounts but do not create new one
     public void setOrder(String name, Integer amount){
-        orders.add(new Order(name, amount));
+        if(this.getOrder(name) == null) {
+            orders.add(new Order(name, amount));
+        }else{
+            this.changeOrderAmount(name, this.getOrder(name).getAmount() + amount);
+        }
     }
 
     public void removeOrder(String name){
@@ -25,6 +30,7 @@ public class Orders{
         }
     }
 
+    // change amount to exact number
     public void changeOrderAmount(String name, Integer amount){
         for(Order o : orders){
             if(o.getName().equals(name)){
@@ -47,7 +53,6 @@ public class Orders{
                 return o;
             }
         }
-
         return null;
     }
 }

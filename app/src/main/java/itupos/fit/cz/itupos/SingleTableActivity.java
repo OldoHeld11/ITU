@@ -85,12 +85,14 @@ public class SingleTableActivity extends AppCompatActivity {
        VariableSingleton.currentTable.putOrder("Pizza",1);
         /**    **/
 
+        VariableSingleton.myInit();
         LinearLayout listLinear = findViewById(R.id.list_linear);
         for(int i = 0; i < VariableSingleton.menuItems.size(); i++){
             if(VariableSingleton.currentTable.getNumOfOrders(VariableSingleton.menuItems.get(i)) > 0){
                 TextView addedView  = new TextView(this);
                 int addedViewId = View.generateViewId();
-                addedView.setText(getString(R.string.ordered_messagge, VariableSingleton.menuItems.get(i) , VariableSingleton.currentTable.getNumOfOrders(VariableSingleton.menuItems.get(i))));
+                //addedView.setText(getString(R.string.ordered_messagge, VariableSingleton.menuItems.get(i) , VariableSingleton.currentTable.getNumOfOrders(VariableSingleton.menuItems.get(i))));
+                addedView.setText(getString(R.string.ordered_messagge, VariableSingleton.myTables[0].orders.getOrder("burger").getName() , VariableSingleton.myTables[0].orders.getOrder("burger").getTotalPrice()));
                 addedView.setTextSize(20);
                 addedView.setTypeface(Typeface.DEFAULT);
                 addedView.setId(addedViewId);

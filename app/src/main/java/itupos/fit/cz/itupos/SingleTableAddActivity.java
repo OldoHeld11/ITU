@@ -18,10 +18,10 @@ public class SingleTableAddActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_add:
-                    mTextMessage.setText(R.string.title_add);
+                    mTextMessage.setText(R.string.title_order);
                     return true;
                 case R.id.navigation_order:
-                    mTextMessage.setText("Vypis aktualnych a priobjednanych veci");
+                    mTextMessage.setText(R.string.title_add);
                     return true;
                 case R.id.navigation_payout:
                     mTextMessage.setText(R.string.title_payout);
