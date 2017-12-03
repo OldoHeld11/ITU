@@ -21,6 +21,7 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         }
     }
 
+
     // Provide a suitable constructor (depends on the kind of dataset)
     public MyAdapter(Table table) {
         this.table = table;
