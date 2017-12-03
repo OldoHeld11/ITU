@@ -82,7 +82,7 @@ public class SingleTableActivity extends AppCompatActivity {
         /**    **/
 
         VariableSingleton.myInit();
-        LinearLayout listLinear = findViewById(R.id.list_linear_right);
+       /* LinearLayout listLinear = findViewById(R.id.list_linear_right);
         TextView addedViewMain  = new TextView(this);
         addedViewMain.setText("Item");
         addedViewMain.setTextSize(18);
@@ -112,7 +112,7 @@ public class SingleTableActivity extends AppCompatActivity {
             listLinear.addView(addedViewRight);
 
 
-        }
+        }*/
     }
 
     private void navigationAddSelectedAction(){

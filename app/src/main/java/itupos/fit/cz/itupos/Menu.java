@@ -4,6 +4,15 @@ import java.util.ArrayList;
 
 public class Menu{
     private ArrayList<MenuItem> menu;
+    private Integer drinkIndex;
+
+    public Integer getDrinkIndex() {
+        return drinkIndex;
+    }
+
+    public void setDrinkIndex(Integer drinkIndex) {
+        this.drinkIndex = drinkIndex;
+    }
 
     public Menu() {
         this.menu = new ArrayList<MenuItem>();

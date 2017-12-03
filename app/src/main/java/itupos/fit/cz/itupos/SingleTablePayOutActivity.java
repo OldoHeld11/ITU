@@ -12,7 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-public class SingleTablePayOutActivity extends Activity {
+public class SingleTablePayOutActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -53,6 +53,7 @@ public class SingleTablePayOutActivity extends Activity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         // recycle viewer
+
         mAdapter = new MyAdapter(VariableSingleton.currentMyTable);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
@@ -61,6 +62,7 @@ public class SingleTablePayOutActivity extends Activity {
         recyclerView.setAdapter(mAdapter);
         VariableSingleton.myInit();
         mAdapter.notifyDataSetChanged();
+
     }
 
 }
