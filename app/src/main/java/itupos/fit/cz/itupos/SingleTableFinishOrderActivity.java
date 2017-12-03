@@ -10,9 +10,6 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 public class SingleTableFinishOrderActivity extends AppCompatActivity {
-    private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
 
     private TextView mTextMessage;
 
@@ -44,15 +41,6 @@ public class SingleTableFinishOrderActivity extends AppCompatActivity {
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-        // recycle viewer
-        mRecyclerView.setHasFixedSize(true); // maybe delete?
-
-        mLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(mLayoutManager);
-
-        mAdapter = new MyAdapter(VariableSingleton.currentTable);
-        mRecyclerView.setAdapter(mAdapter);
     }
 
 }

@@ -3,10 +3,6 @@ package itupos.fit.cz.itupos;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by david on 30.11.17.
- */
-
 public class Table {
     private boolean isTaken;
     private int tableNumber;

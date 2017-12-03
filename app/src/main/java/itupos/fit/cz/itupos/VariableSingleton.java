@@ -1,17 +1,21 @@
 package itupos.fit.cz.itupos;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import java.util.Collection;
-import java.util.Dictionary;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 public class VariableSingleton {
+
+    // ide to aj lepsie
+    public static Menu myMenu;
+    public Orders orders;
+    public Orders ordersPaid;
+
+
     private static VariableSingleton instance;
 
     public static final String WAITER_1 = "0000";

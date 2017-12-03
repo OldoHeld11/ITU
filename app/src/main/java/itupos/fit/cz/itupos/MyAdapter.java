@@ -32,7 +32,7 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                                                    int viewType) {
         // create a new view
         TextView v = (TextView) LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.my_text_view, parent, false);
+                .inflate(R.layout.activity_single_table_pay_out, parent, false);
         // set the view's size, margins, paddings and layout parameters
         //...
         ViewHolder vh = new ViewHolder(v);
@@ -44,13 +44,30 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.mTextView.setText(table.);
+        int count = 0;
+        int positionInMap = 0;
+        for(int i = 0; i < VariableSingleton.menuItems.size(); i++){
+            if(VariableSingleton.currentTable.getNumOfOrders(VariableSingleton.menuItems.get(i)) > 0){
+                count++;
+            }
+            if(count == position) {
+                positionInMap = i;
+                break;
+            }
+        }
+        //holder.mTextView.setText(VariableSingleton.menuItems.get(VariableSingleton.currentTable.getNumOfOrders(positionInMap)));
 
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return table.;
+        int count = 0;
+        for(int i = 0; i < VariableSingleton.menuItems.size(); i++){
+            if(VariableSingleton.currentTable.getNumOfOrders(VariableSingleton.menuItems.get(i)) > 0){
+                count++;
+            }
+        }
+        return count;
     }
 }
