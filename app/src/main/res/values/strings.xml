@@ -24,4 +24,6 @@
     <string name="ordered_messagge">%1$s\t %2$d</string>
     <string name="table_title">Table %1$d</string>
     <string name="aha">Aha %1$d</string>
+    <string name="title_pay_all">Pay all</string>
+    <string name="title_pay_selected">Pay selected</string>
 </resources>

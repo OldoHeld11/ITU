@@ -14,7 +14,7 @@ import java.util.List;
  */
 
 class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-    private MyTable table;
+    private MyTable table; //zmenit na vlastnu
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
@@ -37,7 +37,7 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                                                    int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
-        View itemView = inflater.inflate(R.layout.my_text_view, parent, false);
+        View itemView = inflater.inflate(R.layout.my_text_view, parent, false); //zmenit my_text_view, je to layout, zmenit idcka
 
         return new MyViewHolder(itemView);
     }
@@ -48,7 +48,7 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         Orders orders = table.orders;
-        holder.mTextView.setText(orders.getAllOrders().get(position).getName());
+        holder.mTextView.setText(orders.getAllOrders().get(position).getName()); // sem dat text ktory sa zobrazi v my-text_view
 
     }
 
@@ -56,5 +56,5 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public int getItemCount() {
         return table.orders.getOrdersCount();
-    }
+    } // pocet poloziek
 }
