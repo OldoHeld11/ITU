@@ -34,13 +34,13 @@ public class SingleTableActivity extends AppCompatActivity {
                     intent = new Intent(context, SingleTablePayOutActivity.class);
                     startActivity(intent);
                     return true;
-
+/*
                 case R.id.navigation_show_paid:
                     intent = new Intent(context, ShowPaidItemsActivity.class);
                     startActivity(intent);
                     return true;
 
-
+*/
             }
             return false;
         }
