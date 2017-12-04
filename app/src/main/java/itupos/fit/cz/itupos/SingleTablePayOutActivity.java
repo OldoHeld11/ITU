@@ -42,7 +42,6 @@ public class SingleTablePayOutActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
     private Context context;
-    public Integer aha;
 
     DialogFragment newFragment;
     DialogFragment newFragment2;
@@ -57,7 +56,7 @@ public class SingleTablePayOutActivity extends AppCompatActivity {
 
     public void refresh(){
         VariableSingleton.currentMyTable.orders.setTotalCostToBePaid(0);
-        mTextMessage.setText(String.format(Locale.ENGLISH,"Price: %d/%d$", VariableSingleton.currentMyTable.orders.getTotalCostToBePaid(), VariableSingleton.currentMyTable.orders.getTotalCost()));
+        mTextMessage.setText(String.format(Locale.ENGLISH,"Price: %d/%d€", VariableSingleton.currentMyTable.orders.getTotalCostToBePaid(), VariableSingleton.currentMyTable.orders.getTotalCost()));
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -85,11 +84,9 @@ public class SingleTablePayOutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         setContentView(R.layout.activity_single_table_pay_out);
         context = this;
         this.setTitle("Table " + VariableSingleton.currentMyTable.getTableNumber());
-
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation_pay_out);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -99,7 +96,6 @@ public class SingleTablePayOutActivity extends AppCompatActivity {
         mTextMessage.setText(String.format(Locale.ENGLISH,"Price: %d/%d$", VariableSingleton.currentMyTable.orders.getTotalCostToBePaid(), VariableSingleton.currentMyTable.orders.getTotalCost()));
 
         // recycle viewer
-
         mAdapter = new MyAdapter(VariableSingleton.currentMyTable, this); //myadadpter
         newFragment = new MyDialog();
         newFragment2 = new MyDialog2();
@@ -111,7 +107,6 @@ public class SingleTablePayOutActivity extends AppCompatActivity {
         recyclerView.setAdapter(mAdapter);
         VariableSingleton.myInit();//ine
         mAdapter.notifyDataSetChanged();
-
     }
     
     @Override

@@ -5,6 +5,10 @@ import java.util.ArrayList;
 public class Orders{
     private ArrayList<Order> orders;
 
+    public void setTotalCost(int totalCost) {
+        this.totalCost = totalCost;
+    }
+
     private int totalCost;
 
     public int getTotalCostToBePaid() {

@@ -36,4 +36,6 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="title_activity_show_paid_items">ShowPaidItemsActivity</string>
+    <string name="return_back">Return</string>
+    <string name="paid_items_price">%1$d</string>
 </resources>

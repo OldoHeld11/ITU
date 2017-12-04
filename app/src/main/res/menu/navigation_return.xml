@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_return"
+        android:icon="@drawable/arrow_left"
+        android:title="@string/return_back" />
+</menu>

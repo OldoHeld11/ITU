@@ -44,7 +44,7 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     public void refresh(Order order, Integer orderChange){
         table.orders.setTotalCostToBePaid(table.orders.getTotalCostToBePaid() + orderChange * VariableSingleton.myMenu.getMenuItem(order.getName()).getPrice());
-        payOutActivity.getmTextMessage().setText(String.format(Locale.ENGLISH,"Price: %d/%d$", table.orders.getTotalCostToBePaid(), table.orders.getTotalCost()));
+        payOutActivity.getmTextMessage().setText(String.format(Locale.ENGLISH,"Price: %d/%d€", table.orders.getTotalCostToBePaid(), table.orders.getTotalCost()));
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
