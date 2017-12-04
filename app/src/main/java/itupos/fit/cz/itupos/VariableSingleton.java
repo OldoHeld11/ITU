@@ -28,23 +28,20 @@ public class VariableSingleton {
         }
 
         myMenu = new Menu();
-        myMenu.setMenuItem("pizza", 40);
-        myMenu.setMenuItem("burger", 50);
-        myMenu.setMenuItem("burger2", 50);
-        myMenu.setMenuItem("pizza2", 40);
-        myMenu.setMenuItem("burger3", 50);
-        myMenu.setMenuItem("pizza3", 40);
-        myMenu.setMenuItem("burger4", 50);
-        myMenu.setMenuItem("pizza4", 40);
-        myMenu.setMenuItem("1burger", 50);
-        myMenu.setMenuItem("2burger", 40);
-        myMenu.setMenuItem("3burger", 50);
-        myMenu.setMenuItem("4burger", 40);
-        myMenu.setMenuItem("5burger", 50);
-        myMenu.setMenuItem("6burger", 40);
-        myMenu.setMenuItem("7burger", 50);
-        myMenu.setMenuItem("8burger", 40);
-        myMenu.setMenuItem("9burger", 40);
+        myMenu.setMenuItem("Pizza Hawai", 5);
+        myMenu.setMenuItem("Bacon Burger", 8);
+        myMenu.setMenuItem("Chilli Burger", 8);
+        myMenu.setMenuItem("Pizza ala Sulo", 9);
+        myMenu.setMenuItem("Madarsky gulas", 4);
+        myMenu.setMenuItem("Piri piri chicken caesar ", 4);
+        myMenu.setMenuItem("Sirlion Steak ", 12);
+        myMenu.setMenuItem("Vodka", 4);
+        myMenu.setMenuItem("Beef tartar", 7);
+        myMenu.setMenuItem("Goat cheese", 5);
+        myMenu.setMenuItem("Valrhrona chocolate sphere", 4);
+        myMenu.setMenuItem("Chardonnay 2014", 14);
+        myMenu.setMenuItem("Sprite", 4);
+        myMenu.setMenuItem("Draught Beer", 2);
         myMenu.setDrinkIndex(5); //vymyslene
        /* myTables[1].orders.setOrder("burger", 2);
         myTables[1].orders.setOrder("pizza", 1);
