@@ -16,6 +16,9 @@ public class VariableSingleton {
     public static MyTable currentMyTable;
 
     public static void myInit(){
+        if(myTables != null){
+            return;
+        }
         myTables = new MyTable[15];
         for(int i = 1; i <= 13; i++){
             myTables[i] = new MyTable(i);
@@ -45,7 +48,6 @@ public class VariableSingleton {
         myTables[1].orders.setOrder("pizza", 1);
         myTables[1].orders.removeOrder("pizza");
         myTables[1].orders.changeOrderAmount("burger", 1);
-        myTables[1].orders.setOrder("pizza", 2);
         myTables[1].orders.setOrder("pizza2", 2);
         myTables[1].orders.setOrder("pizza3", 2);
         myTables[1].orders.setOrder("pizza4", 2);

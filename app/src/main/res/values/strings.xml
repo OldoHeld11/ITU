@@ -29,4 +29,8 @@
     <string name="plus">+</string>
     <string name="minus">-</string>
     <string name="_0">%1$d/%2$d</string>
+    <string name="pay_all_orders_question">Are you sure to pay out all orders?</string>
+    <string name="pay_selected_orders_question">Are you sure to pay out selected orders?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 </resources>

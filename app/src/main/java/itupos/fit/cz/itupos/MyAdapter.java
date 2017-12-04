@@ -98,6 +98,8 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 notifyDataSetChanged();
             }
         });
+
+
 /*
         holder.checkBox.setOnCheckedChangeListener(null);
         holder.checkBox.setChecked(false);
