@@ -48,7 +48,7 @@ public class MyDialog2 extends DialogFragment{
                         orders.getAllOrders().removeAll(found);
                         RecyclerView.Adapter myAdapter = ((SingleTablePayOutActivity)getActivity()).getmAdapter();
                         myAdapter.notifyDataSetChanged();
-
+                        ((SingleTablePayOutActivity)getActivity()).refresh();
                     }
                 })
                 .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {

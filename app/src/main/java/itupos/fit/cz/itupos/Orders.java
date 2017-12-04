@@ -5,14 +5,24 @@ import java.util.ArrayList;
 public class Orders{
     private ArrayList<Order> orders;
 
+    private int totalCost;
+
+    public int getTotalCostToBePaid() {
+        return totalCostToBePaid;
+    }
+
+    public void setTotalCostToBePaid(int totalCostToBePaid) {
+        this.totalCostToBePaid = totalCostToBePaid;
+    }
+
+    private int totalCostToBePaid;
+
     public int getTotalCost() {
         return totalCost;
     }
 
-    private int totalCost;
-
     public Orders() {
-        this.orders = new ArrayList<Order>(); this.totalCost = 0;
+        this.orders = new ArrayList<Order>(); this.totalCost = 0; this.totalCostToBePaid = 0;
     }
 
     public Integer getOrdersCount(){

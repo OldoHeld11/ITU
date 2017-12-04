@@ -23,6 +23,8 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Locale;
+
 public class SingleTablePayOutActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
 
@@ -32,6 +34,10 @@ public class SingleTablePayOutActivity extends AppCompatActivity {
 
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+
+    public TextView getmTextMessage() {
+        return mTextMessage;
+    }
 
     private TextView mTextMessage;
     private Context context;
@@ -46,6 +52,11 @@ public class SingleTablePayOutActivity extends AppCompatActivity {
 
     public void confirmFireMissiles2() {
         newFragment2.show(getFragmentManager(), "missiles2");
+    }
+
+    public void refresh(){
+        VariableSingleton.currentMyTable.orders.setTotalCostToBePaid(0);
+        mTextMessage.setText(String.format(Locale.ENGLISH,"Price: %d/%d$", VariableSingleton.currentMyTable.orders.getTotalCostToBePaid(), VariableSingleton.currentMyTable.orders.getTotalCost()));
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -73,17 +84,22 @@ public class SingleTablePayOutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         setContentView(R.layout.activity_single_table_pay_out);
         context = this;
         this.setTitle("Table " + VariableSingleton.selectedTableId);
 
-        //mTextMessage = (TextView) findViewById(R.id.message);
+
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation_pay_out);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+        // sum
+        mTextMessage = (TextView) findViewById(R.id.appCompatTextView);
+        mTextMessage.setText(String.format(Locale.ENGLISH,"Price: %d/%d$", VariableSingleton.currentMyTable.orders.getTotalCostToBePaid(), VariableSingleton.currentMyTable.orders.getTotalCost()));
+
         // recycle viewer
 
-        mAdapter = new MyAdapter(VariableSingleton.currentMyTable); //myadadpter
+        mAdapter = new MyAdapter(VariableSingleton.currentMyTable, this); //myadadpter
         newFragment = new MyDialog();
         newFragment2 = new MyDialog2();
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view); //recycle_view v layout activite, pridat recycle_view s inym id

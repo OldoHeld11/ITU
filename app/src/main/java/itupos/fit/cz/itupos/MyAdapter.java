@@ -22,6 +22,8 @@ import java.util.Locale;
 class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private MyTable table; //zmenit na vlastnu
     private MyViewHolder holder;
+    private TextView sum;
+    private SingleTablePayOutActivity payOutActivity;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
@@ -29,19 +31,26 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         public TextView toBePaidView;
         public Button buttonPlus;
         public Button buttonMinus;
+        public TextView sum;
         public MyViewHolder(View v) {
             super(v);
             mTextView = (TextView) itemView.findViewById(R.id.title);
             buttonMinus = (Button) itemView.findViewById(R.id.decrease);
             buttonPlus = (Button) itemView.findViewById(R.id.increase);
             toBePaidView = (TextView) itemView.findViewById(R.id.integer_number);
+            sum = (TextView) itemView.findViewById(R.id.appCompatTextView);
         }
     }
 
+    public void refresh(Order order, Integer orderChange){
+        table.orders.setTotalCostToBePaid(table.orders.getTotalCostToBePaid() + orderChange * VariableSingleton.myMenu.getMenuItem(order.getName()).getPrice());
+        payOutActivity.getmTextMessage().setText(String.format(Locale.ENGLISH,"Price: %d/%d$", table.orders.getTotalCostToBePaid(), table.orders.getTotalCost()));
+    }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(MyTable table) {
+    public MyAdapter(MyTable table, SingleTablePayOutActivity payOutActivity) {
         this.table = table;
+        this.payOutActivity = payOutActivity;
     }
 
     // Create new views (invoked by the layout manager)
@@ -76,6 +85,7 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 if(order.getAmount() > order.getToBePaid()){
                     order.setToBePaid(order.getToBePaid() + 1);
                     notifyDataSetChanged();
+                    refresh(order, 1);
                 }
             }
         });
@@ -86,6 +96,7 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 if(0 < order.getToBePaid()){
                     order.setToBePaid(order.getToBePaid() - 1);
                     notifyDataSetChanged();
+                    refresh(order, -1);
                 }
             }
         });
@@ -94,8 +105,8 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             @Override
             public void onClick(View view) {
                 order.setToBePaid(order.getAmount());
-                //notifyItemChanged(position);
                 notifyDataSetChanged();
+                refresh(order, order.getAmount());
             }
         });
 

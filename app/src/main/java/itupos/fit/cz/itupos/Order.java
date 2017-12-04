@@ -4,6 +4,13 @@ public class Order{
     private String name;
     private Integer totalPrice;
     private Integer amount;
+    private Integer toBePaid;
+
+    public Integer getTotalPriceToBePaid() {
+        return totalPriceToBePaid;
+    }
+
+    private Integer totalPriceToBePaid;
 
     public Integer getToBePaid() {
         return toBePaid;
@@ -11,9 +18,8 @@ public class Order{
 
     public void setToBePaid(Integer toBePaid) {
         this.toBePaid = toBePaid;
+        this.totalPriceToBePaid = VariableSingleton.myMenu.getMenuItemPrice(this.getName()) * toBePaid;
     }
-
-    private Integer toBePaid;
 
     public Order(String name, Integer amount) {
         if(VariableSingleton.myMenu.getMenuItem(name) != null) {
