@@ -32,7 +32,7 @@ public class VariableSingleton {
         myMenu.setMenuItem("Chilli Burger", 8);
         myMenu.setMenuItem("Pizza ala Sulo", 9);
         myMenu.setMenuItem("Madarsky gulas", 4);
-        myMenu.setMenuItem("Piri piri chicken caesar ", 4);
+        myMenu.setMenuItem("Chicken caesar ", 4);
         myMenu.setMenuItem("Sirlion Steak ", 12);
         myMenu.setMenuItem("Vodka", 4);
         myMenu.setMenuItem("Beef tartar", 7);
