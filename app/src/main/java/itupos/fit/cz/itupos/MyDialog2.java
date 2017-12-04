@@ -46,6 +46,9 @@ public class MyDialog2 extends DialogFragment{
                         }
 
                         orders.getAllOrders().removeAll(found);
+                        if(orders.getAllOrders().isEmpty()){
+                            VariableSingleton.currentMyTable.setFree(); // pridal Edo
+                        }
                         RecyclerView.Adapter myAdapter = ((SingleTablePayOutActivity)getActivity()).getmAdapter();
                         myAdapter.notifyDataSetChanged();
                         ((SingleTablePayOutActivity)getActivity()).refresh();

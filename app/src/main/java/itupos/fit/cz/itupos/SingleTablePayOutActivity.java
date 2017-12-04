@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.DialogFragment;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -87,7 +88,7 @@ public class SingleTablePayOutActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_single_table_pay_out);
         context = this;
-        this.setTitle("Table " + VariableSingleton.selectedTableId);
+        this.setTitle("Table " + VariableSingleton.currentMyTable.getTableNumber());
 
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation_pay_out);
@@ -112,5 +113,12 @@ public class SingleTablePayOutActivity extends AppCompatActivity {
         mAdapter.notifyDataSetChanged();
 
     }
+    
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(context, SingleTableActivity.class);
+        startActivity(intent);
+    }
+
 
 }

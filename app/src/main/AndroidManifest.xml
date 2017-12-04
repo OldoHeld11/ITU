@@ -48,6 +48,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="itupos.fit.cz.itupos.SingleTableActivity" />
         </activity>
+        <activity
+            android:name=".ShowPaidItemsActivity"
+            android:label="@string/title_activity_show_paid_items"
+            android:parentActivityName=".SingleTableActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="itupos.fit.cz.itupos.SingleTableActivity" />
+        </activity>
     </application>
 
 </manifest>

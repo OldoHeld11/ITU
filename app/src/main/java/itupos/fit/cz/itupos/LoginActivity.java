@@ -1,5 +1,6 @@
 package itupos.fit.cz.itupos;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -29,12 +30,12 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 final String password = etPassword.getText().toString();
                 if (password.equals(VariableSingleton.WAITER_1) ) {
-                    VariableSingleton.myInit();
+                    //VariableSingleton.myInit();
                     VariableSingleton.setName("Davidko");
                     Intent intent = new Intent(context, TablesActivity.class);
                     startActivity(intent);
                 }else  if (password.equals(VariableSingleton.WAITER_2) ) {
-                    VariableSingleton.myInit();
+                   // VariableSingleton.myInit();
                     VariableSingleton.setName("Oliverko");
                     Intent intent = new Intent(context, TablesActivity.class);
                     startActivity(intent);
@@ -47,4 +48,9 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
+
+    public void onBackPressed() {
+        this.finish();
+    }
+
 }

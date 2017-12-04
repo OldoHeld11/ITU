@@ -40,6 +40,8 @@ public class Orders{
         }else{
             this.changeOrderAmount(name, this.getOrder(name).getAmount() + amount);
         }
+        if(!VariableSingleton.currentMyTable.isTaken())
+            VariableSingleton.currentMyTable.setTaken(); // pridal Edo
     }
 
     public void removeOrder(String name){
@@ -51,8 +53,12 @@ public class Orders{
                 break;
             }
         }
-        if(order != null)
+        if(order != null){
             orders.remove(order);
+            if(orders.isEmpty()){
+                VariableSingleton.currentMyTable.setFree(); // pridal Edo
+            }
+        }
     }
 
     // change amount to exact number
@@ -66,7 +72,10 @@ public class Orders{
                 }
                 if(amount <= 0){
                     orders.remove(o);
-                }else{
+                    if(orders.isEmpty()){
+                        VariableSingleton.currentMyTable.setFree(); // pridal Edo
+                    }
+                } else {
                     // substract original price
                     this.totalCost -= this.getOrder(name).getTotalPrice();
                     o.setAmount(amount);
@@ -74,6 +83,9 @@ public class Orders{
                     this.totalCost += this.getOrder(name).getTotalPrice();
                 }
             }
+        }
+        if(orders.isEmpty()){
+            VariableSingleton.currentMyTable.setFree(); // pridal Edo
         }
     }
 

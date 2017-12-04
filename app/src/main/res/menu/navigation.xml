@@ -11,4 +11,10 @@
         android:icon="@drawable/ic_notifications_black_24dp"
         android:title="@string/title_payout" />
 
+    <item
+        android:id="@+id/navigation_show_paid"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="@string/title_show_paid" />
+
+
 </menu>
