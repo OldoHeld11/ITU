@@ -28,7 +28,6 @@ public class VariableSingleton {
         }
 
         myMenu = new Menu();
-        myMenu.setMenuItem("Pizza Hawai", 5);
         myMenu.setMenuItem("Bacon Burger", 8);
         myMenu.setMenuItem("Chilli Burger", 8);
         myMenu.setMenuItem("Pizza ala Sulo", 9);
@@ -38,8 +37,6 @@ public class VariableSingleton {
         myMenu.setMenuItem("Vodka", 4);
         myMenu.setMenuItem("Beef tartar", 7);
         myMenu.setMenuItem("Goat cheese", 5);
-        myMenu.setMenuItem("Valrhrona chocolate sphere", 4);
-        myMenu.setMenuItem("Chardonnay 2014", 14);
         myMenu.setMenuItem("Sprite", 4);
         myMenu.setMenuItem("Draught Beer", 2);
         myMenu.setDrinkIndex(5); //vymyslene
