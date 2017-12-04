@@ -13,6 +13,7 @@
     <string name="title_add">Add Item</string>
     <string name="title_order">Send Order</string>
     <string name="title_payout">Pay Out</string>
+    <string name="title_show_paid">Show Paid</string>
     <string name="addedViewID">addedViewId</string>
     <string name="title_activity_single_table_pay_out">SingleTablePayOutActivity</string>
     <string name="title_home">Home</string>
@@ -33,4 +34,5 @@
     <string name="pay_selected_orders_question">Are you sure to pay out selected orders?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="title_activity_show_paid_items">ShowPaidItemsActivity</string>
 </resources>

@@ -19,6 +19,8 @@ public class VariableSingleton {
         if(myTables != null){
             return;
         }
+
+
         myTables = new MyTable[15];
         for(int i = 1; i <= 13; i++){
             myTables[i] = new MyTable(i);
@@ -44,10 +46,11 @@ public class VariableSingleton {
         myMenu.setMenuItem("8burger", 40);
         myMenu.setMenuItem("9burger", 40);
         myMenu.setDrinkIndex(5); //vymyslene
-        myTables[1].orders.setOrder("burger", 2);
+       /* myTables[1].orders.setOrder("burger", 2);
         myTables[1].orders.setOrder("pizza", 1);
         myTables[1].orders.removeOrder("pizza");
         myTables[1].orders.changeOrderAmount("burger", 1);
+        myTables[1].orders.setOrder("pizza", 2);
         myTables[1].orders.setOrder("pizza2", 2);
         myTables[1].orders.setOrder("pizza3", 2);
         myTables[1].orders.setOrder("pizza4", 2);
@@ -62,7 +65,7 @@ public class VariableSingleton {
         myTables[1].orders.setOrder("6burger", 2);
         myTables[1].orders.setOrder("7burger", 2);
         myTables[1].orders.setOrder("8burger", 2);
-        myTables[1].orders.setOrder("9burger", 2);
+        myTables[1].orders.setOrder("9burger", 2);*/
 
     }
 /////////////////////////////////////////////////////////////////////////////////
@@ -72,7 +75,6 @@ public class VariableSingleton {
     public static final String WAITER_1 = "0000";
     public static final String WAITER_2 = "1111";
     public static  String Meno ;
-    public static int selectedTableId;
 
 
     private VariableSingleton(){}

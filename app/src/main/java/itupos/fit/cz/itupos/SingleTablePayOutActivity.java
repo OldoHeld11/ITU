@@ -87,7 +87,7 @@ public class SingleTablePayOutActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_single_table_pay_out);
         context = this;
-        this.setTitle("Table " + VariableSingleton.selectedTableId);
+        this.setTitle("Table " + VariableSingleton.currentMyTable.getTableNumber());
 
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation_pay_out);

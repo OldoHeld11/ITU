@@ -25,6 +25,8 @@ public class TablesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tables);
 
+        VariableSingleton.myInit();
+
         context = this;
         VariableSingleton.myTables[1].setTableView((ImageView) findViewById(R.id.table_1),context);
         VariableSingleton.myTables[2].setTableView((ImageView) findViewById(R.id.table_2),context);
@@ -39,8 +41,15 @@ public class TablesActivity extends AppCompatActivity {
         VariableSingleton.myTables[11].setTableView((ImageView) findViewById(R.id.table_11),context);
         VariableSingleton.myTables[12].setTableView((ImageView) findViewById(R.id.table_12),context);
         VariableSingleton.myTables[13].setTableView((ImageView) findViewById(R.id.table_13),context);
-        VariableSingleton.myTables[1].getTableView().setColorFilter(Color.argb(245, 0, 255, 0));
-        VariableSingleton.myTables[1].setTaken();
+
+        for(int i = 1; i <= 13; i++){
+            VariableSingleton.myTables[i].setFree();
+        }
+
+       /* VariableSingleton.myTables[1].setTaken();
+        VariableSingleton.myTables[2].setTaken();
+        VariableSingleton.myTables[10].setTaken();
+        VariableSingleton.myTables[5].setTaken();*/
 
         btn_active = (findViewById(R.id.btn_active_tables));
 

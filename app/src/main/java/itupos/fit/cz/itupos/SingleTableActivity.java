@@ -34,6 +34,13 @@ public class SingleTableActivity extends AppCompatActivity {
                     intent = new Intent(context, SingleTablePayOutActivity.class);
                     startActivity(intent);
                     return true;
+
+                case R.id.navigation_show_paid:
+                    intent = new Intent(context, ShowPaidItemsActivity.class);
+                    startActivity(intent);
+                    return true;
+
+
             }
             return false;
         }
@@ -50,7 +57,6 @@ public class SingleTableActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        VariableSingleton.myInit();
 
         LinearLayout listLinearLeft = findViewById(R.id.list_linear_left);
         TextView addedViewMainLeft  = new TextView(this);
