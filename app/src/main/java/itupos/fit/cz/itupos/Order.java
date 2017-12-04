@@ -5,11 +5,22 @@ public class Order{
     private Integer totalPrice;
     private Integer amount;
 
+    public Integer getToBePaid() {
+        return toBePaid;
+    }
+
+    public void setToBePaid(Integer toBePaid) {
+        this.toBePaid = toBePaid;
+    }
+
+    private Integer toBePaid;
+
     public Order(String name, Integer amount) {
         if(VariableSingleton.myMenu.getMenuItem(name) != null) {
             this.name = name;
             this.amount = amount;
             this.totalPrice = VariableSingleton.myMenu.getMenuItemPrice(this.getName()) * amount;
+            this.toBePaid = 0;
         }
     }
 

@@ -26,4 +26,7 @@
     <string name="aha">Aha %1$d</string>
     <string name="title_pay_all">Pay all</string>
     <string name="title_pay_selected">Pay selected</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="_0">%1$d/%2$d</string>
 </resources>
