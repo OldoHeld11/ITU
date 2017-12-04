@@ -53,7 +53,7 @@ public class SingleTableActivity extends AppCompatActivity {
         context = this;
 
         this.setTitle("Table " + VariableSingleton.currentMyTable.getTableNumber());
-
+       // VariableSingleton.currentMyTable.orders.setOrder("pizza",2);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
@@ -97,10 +97,13 @@ public class SingleTableActivity extends AppCompatActivity {
 
             listLinearRight.addView(addedViewRight);
             listLinearLeft.addView(addedViewLeft);
-
-
         }
     }
 
-
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(context, TablesActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        startActivity(intent);
+    }
 }

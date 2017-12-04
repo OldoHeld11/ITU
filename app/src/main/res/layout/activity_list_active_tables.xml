@@ -21,7 +21,7 @@
 
     <LinearLayout
         android:id="@+id/rl_table_of_contents"
-        android:layout_width="137dp"
+        android:layout_width="202dp"
         android:layout_height="fill_parent"
         android:layout_marginBottom="8dp"
         android:orientation="horizontal"

@@ -1,5 +1,6 @@
 package itupos.fit.cz.itupos;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -47,4 +48,9 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
+
+    public void onBackPressed() {
+        this.finish();
+    }
+
 }

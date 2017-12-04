@@ -26,6 +26,9 @@ public class ListActiveTablesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_active_tables);
         context = this;
 
+        this.setTitle("All Active Tables");
+
+
         Login_meno = findViewById(R.id.tv_meno);
         Login_meno.setText(VariableSingleton.Meno);
 
@@ -34,8 +37,10 @@ public class ListActiveTablesActivity extends AppCompatActivity {
             LinearLayout[] rows = new LinearLayout[7];
             LinearLayout scrViewButLay = findViewById(R.id.rl_table_of_contents);
             scrViewButLay.setOrientation(LinearLayout.VERTICAL);
+
             int activeTables = 0;
-            for(int index = 1; index <= 13; index++) {
+
+            for(int index = 1; index <= 13; index++){
 
                 if(VariableSingleton.myTables[index].isTaken()) {
                    // rows[index] = new LinearLayout(this);
@@ -43,13 +48,13 @@ public class ListActiveTablesActivity extends AppCompatActivity {
 
                   //  myButton[index] = new Button(this);//initialize the button here
                    // myButton[index].setText("Table " + index);
-                   /* if(activeTables % 2 == 0){
+                    if(activeTables % 2 == 0){
                         rows[activeTables/2] = new LinearLayout(this);
                         rows[activeTables/2].setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                    }*/
+                    }
                     activeTables++;
-                    LinearLayout row = new LinearLayout(this);
-                    row.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                    //LinearLayout row = new LinearLayout(this);
+                    //row.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 
                     Button btnTable = new Button(this);
                     btnTable.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
@@ -66,11 +71,12 @@ public class ListActiveTablesActivity extends AppCompatActivity {
                             startActivity(intent);
                         }
                     });
-                    //rows[activeTables/2].addView(btnTable);
-                    row.addView(btnTable);
-                    scrViewButLay.addView(row);
-                    //if(activeTables % 2 == 0)
-                     //   scrViewButLay.addView(rows[activeTables/2]);
+
+                    rows[(activeTables - 1)/2].addView(btnTable);
+                    //row.addView(btnTable);
+                    //scrViewButLay.addView(row);
+                    if(( (activeTables - 1) % 2) == 0)
+                        scrViewButLay.addView(rows[activeTables/2]);
 
                 }
             }

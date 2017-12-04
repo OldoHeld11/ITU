@@ -14,7 +14,7 @@ public class VariableSingleton {
     public static Menu myMenu;
     public static MyTable[] myTables;
     public static MyTable currentMyTable;
-
+    public static Context tablesActivityContext;
     public static void myInit(){
         if(myTables != null){
             return;

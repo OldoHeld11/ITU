@@ -66,8 +66,12 @@ public class SingleTableAddActivity extends AppCompatActivity {
         recyclerView.setAdapter(mAdapter);
         VariableSingleton.myInit();//ine
         mAdapter.notifyDataSetChanged();
+    }
 
-
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(context, SingleTableActivity.class);
+        startActivity(intent);
     }
 
 }
