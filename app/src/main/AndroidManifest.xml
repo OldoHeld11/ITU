@@ -19,20 +19,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TablesActivity" />
+        <activity android:name=".TablesActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".SingleTableActivity"
-            android:label="@string/title_activity_single_table" />
-        <activity android:name=".ListActiveTablesActivity" />
+            android:label="@string/title_activity_single_table"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ListActiveTablesActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".SingleTablePayOutActivity"
             android:label="@string/title_activity_single_table_pay_out"
-            android:parentActivityName=".SingleTableActivity">
+            android:parentActivityName=".SingleTableActivity"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="itupos.fit.cz.itupos.SingleTableActivity" />
         </activity>
         <activity
+            android:screenOrientation="portrait"
             android:name=".SingleTableAddActivity"
             android:label="@string/title_activity_single_table_add"
             android:parentActivityName=".SingleTableActivity">
@@ -41,6 +46,7 @@
                 android:value="itupos.fit.cz.itupos.SingleTableActivity" />
         </activity>
         <activity
+            android:screenOrientation="portrait"
             android:name=".SingleTableFinishOrderActivity"
             android:label="@string/title_activity_single_table_finish_order"
             android:parentActivityName=".SingleTableActivity">
@@ -49,6 +55,7 @@
                 android:value="itupos.fit.cz.itupos.SingleTableActivity" />
         </activity>
         <activity
+            android:screenOrientation="portrait"
             android:name=".ShowPaidItemsActivity"
             android:label="@string/title_activity_show_paid_items"
             android:parentActivityName=".SingleTableActivity">
