@@ -46,7 +46,7 @@ public class ShowPaidItemsActivity extends AppCompatActivity {
             Intent intent;
             switch (item.getItemId()) {
                 case R.id.navigation_return:
-                    intent = new Intent(context, SingleTableAddActivity.class);
+                    intent = new Intent(context, SingleTableActivity.class);
                     startActivity(intent);
                     return true;
             }

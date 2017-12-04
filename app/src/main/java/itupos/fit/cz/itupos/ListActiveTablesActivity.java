@@ -48,9 +48,9 @@ public class ListActiveTablesActivity extends AppCompatActivity {
 
                   //  myButton[index] = new Button(this);//initialize the button here
                    // myButton[index].setText("Table " + index);
-                    if(activeTables % 2 == 0){
-                        rows[activeTables/2] = new LinearLayout(this);
-                        rows[activeTables/2].setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                    if(activeTables % 3 == 0){
+                        rows[activeTables/3] = new LinearLayout(this);
+                        rows[activeTables/3].setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                     }
                     activeTables++;
                     //LinearLayout row = new LinearLayout(this);
@@ -72,11 +72,11 @@ public class ListActiveTablesActivity extends AppCompatActivity {
                         }
                     });
 
-                    rows[(activeTables - 1)/2].addView(btnTable);
+                    rows[(activeTables - 1)/3].addView(btnTable);
                     //row.addView(btnTable);
                     //scrViewButLay.addView(row);
-                    if(( (activeTables - 1) % 2) == 0)
-                        scrViewButLay.addView(rows[activeTables/2]);
+                    if(( (activeTables - 1) % 3) == 0)
+                        scrViewButLay.addView(rows[activeTables/3]);
 
                 }
             }
