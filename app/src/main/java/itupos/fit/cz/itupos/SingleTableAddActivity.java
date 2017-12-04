@@ -50,7 +50,7 @@ public class SingleTableAddActivity extends AppCompatActivity {
         setContentView(R.layout.activity_single_table_add);
         context = this;
 
-        this.setTitle("Add item on Table " + VariableSingleton.selectedTableId);
+        this.setTitle("Add item on Table " + VariableSingleton.currentMyTable.getTableNumber());
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation_add_item);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
