@@ -52,6 +52,8 @@ public class SingleTableActivity extends AppCompatActivity {
         setContentView(R.layout.activity_single_table);
         context = this;
 
+
+
         this.setTitle("Table " + VariableSingleton.currentMyTable.getTableNumber());
        // VariableSingleton.currentMyTable.orders.setOrder("pizza",2);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);

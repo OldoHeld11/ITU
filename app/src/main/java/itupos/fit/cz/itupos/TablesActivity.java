@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -19,7 +20,7 @@ import android.widget.Toast;
 
 public class TablesActivity extends AppCompatActivity {
 
-
+    private TextView Login_meno;
     private Context context;
     private Button btn_active;
 
@@ -31,6 +32,9 @@ public class TablesActivity extends AppCompatActivity {
         VariableSingleton.myInit();
 
         context = this;
+
+        Login_meno = findViewById(R.id.tv_meno2);
+        Login_meno.setText(VariableSingleton.Meno);
         VariableSingleton.tablesActivityContext = this;
         VariableSingleton.myTables[1].setTableView((ImageView) findViewById(R.id.table_1), context);
         VariableSingleton.myTables[2].setTableView((ImageView) findViewById(R.id.table_2), context);

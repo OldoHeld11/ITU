@@ -17,6 +17,16 @@
         tools:layout_editor_absoluteX="0dp" />
 
 
+    <TextView
+        android:id="@+id/tv_meno2"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Meno"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/table_1"
         android:layout_width="109dp"

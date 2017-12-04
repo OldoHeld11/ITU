@@ -68,6 +68,7 @@ public class VariableSingleton {
 
     public static final String WAITER_1 = "0000";
     public static final String WAITER_2 = "1111";
+    public static final String WAITER_3 = "007";
     public static  String Meno ;
 
 

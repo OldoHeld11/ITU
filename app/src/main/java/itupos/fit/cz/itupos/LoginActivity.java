@@ -63,15 +63,20 @@ public class LoginActivity extends AppCompatActivity {
                 final String password = etPassword.getText().toString();
                 if (password.equals(VariableSingleton.WAITER_1) ) {
                     //VariableSingleton.myInit();
-                    VariableSingleton.setName("Davidko");
+                    VariableSingleton.setName("WAITER: Davidko");
                     Intent intent = new Intent(context, TablesActivity.class);
                     startActivity(intent);
                 }else  if (password.equals(VariableSingleton.WAITER_2) ) {
                    // VariableSingleton.myInit();
-                    VariableSingleton.setName("Oliverko");
+                    VariableSingleton.setName("WAITER: Oliverko");
                     Intent intent = new Intent(context, TablesActivity.class);
                     startActivity(intent);
-                }  else {
+                } else  if (password.equals(VariableSingleton.WAITER_3) ) {
+                // VariableSingleton.myInit();
+                VariableSingleton.setName("ADMIN: Stulmajster");
+                Intent intent = new Intent(context, TablesActivity.class);
+                startActivity(intent);
+            }  else {
                     VariableSingleton.getInstance().createToast(context);
                     Toast.makeText(context, "Chyba", Toast.LENGTH_LONG).show();
                 }

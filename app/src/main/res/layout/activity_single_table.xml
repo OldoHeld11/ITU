@@ -8,7 +8,7 @@
     tools:context="itupos.fit.cz.itupos.SingleTableActivity">
 
 
-        <LinearLayout
+    <LinearLayout
         android:id="@+id/list_linear_left"
         android:layout_width="166dp"
         android:layout_height="400dp"
