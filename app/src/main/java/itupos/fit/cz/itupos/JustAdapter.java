@@ -47,7 +47,7 @@ public class JustAdapter extends RecyclerView.Adapter<JustAdapter.JustViewHolder
     public void onBindViewHolder(JustAdapter.JustViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.mTextView.setText(menu.getAllMenuItems().get(position).getName()); // sem dat text ktory sa zobrazi v my-text_view
+        holder.mTextView.setText(new StringBuilder().append(menu.getAllMenuItems().get(position).getName()).append("  - ").append(menu.getAllMenuItems().get(position).getPrice()).append("€")); // sem dat text ktory sa zobrazi v my-text_view
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

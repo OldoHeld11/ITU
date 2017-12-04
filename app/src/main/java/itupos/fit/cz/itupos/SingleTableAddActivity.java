@@ -35,18 +35,12 @@ public class SingleTableAddActivity extends AppCompatActivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_add:
-                    mTextMessage.setText(R.string.title_order);
+            Intent intent;
+            intent = new Intent(context, SingleTableActivity.class);
+            startActivity(intent);
                     return true;
-                /*case R.id.navigation_order:
-                    mTextMessage.setText(R.string.title_add);
-                    return true;*/
-                case R.id.navigation_payout:
-                    mTextMessage.setText(R.string.title_payout);
-                    return true;
-            }
-            return false;
+
+
         }
     };
 
@@ -56,11 +50,11 @@ public class SingleTableAddActivity extends AppCompatActivity {
         setContentView(R.layout.activity_single_table_add);
         context = this;
 
-        this.setTitle("Table " + VariableSingleton.selectedTableId);
-/*
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation_pay_out);
+        this.setTitle("Add item on Table " + VariableSingleton.selectedTableId);
+
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation_add_item);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-*/
+
         // recycle viewer
 
         mAdapter = new JustAdapter(VariableSingleton.myMenu); //myadadpter
