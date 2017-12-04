@@ -78,7 +78,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }  else {
                     VariableSingleton.getInstance().createToast(context);
-                    Toast.makeText(context, "Chyba", Toast.LENGTH_LONG).show();
+                    Toast.makeText(context, "Wrong password", Toast.LENGTH_LONG).show();
                 }
 
 
