@@ -64,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (password.equals(VariableSingleton.WAITER_1) ) {
                     //VariableSingleton.myInit();
                     VariableSingleton.setName("WAITER: Davidko");
-                    Intent intent = new Intent(context, TablesActivity.class);
+                    Intent intent = new Intent(context, MainActivity.class);
                     startActivity(intent);
                 }else  if (password.equals(VariableSingleton.WAITER_2) ) {
                    // VariableSingleton.myInit();

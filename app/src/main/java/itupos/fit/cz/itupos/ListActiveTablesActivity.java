@@ -1,10 +1,14 @@
 package itupos.fit.cz.itupos;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -15,73 +19,115 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 
-public class ListActiveTablesActivity extends AppCompatActivity {
+public class ListActiveTablesActivity extends android.support.v4.app.Fragment {
     private Context context;
     private TextView Login_meno;
 
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_active_tables);
-        context = this;
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        this.setTitle("All Active Tables");
+        View view = inflater.inflate(R.layout.activity_list_active_tables, null);
+
+        // Create UI components here.
+        Activity activity = getActivity();
+        //setContentView(R.layout.activity_list_active_tables);
+        context = activity;
+
+        activity.setTitle("All Active Tables");
 
 
-        Login_meno = findViewById(R.id.tv_meno);
+        Login_meno = view.findViewById(R.id.tv_meno);
         Login_meno.setText(VariableSingleton.Meno);
 
-            //test creating of dynamic buttons
-          //  Button[] myButton = new Button[14];
-            LinearLayout[] rows = new LinearLayout[7];
-            LinearLayout scrViewButLay = findViewById(R.id.rl_table_of_contents);
-            scrViewButLay.setOrientation(LinearLayout.VERTICAL);
+        //test creating of dynamic buttons
+        //  Button[] myButton = new Button[14];
 
-            int activeTables = 0;
+        //view = inflater.inflate(R.layout.activity_list_active_tables, scrViewButLay);
+        return view;
+    }
 
-            for(int index = 1; index <= 13; index++){
+    public void onStart() {
 
-                if(VariableSingleton.myTables[index].isTaken()) {
-                   // rows[index] = new LinearLayout(this);
-                   // rows[index].setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        super.onStart();
 
-                  //  myButton[index] = new Button(this);//initialize the button here
-                   // myButton[index].setText("Table " + index);
-                    if(activeTables % 3 == 0){
-                        rows[activeTables/3] = new LinearLayout(this);
-                        rows[activeTables/3].setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                    }
-                    activeTables++;
-                    //LinearLayout row = new LinearLayout(this);
-                    //row.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        LinearLayout[] rows = new LinearLayout[7];
+        LinearLayout scrViewButLay = getActivity().findViewById(R.id.rl_table_of_contents);
+        scrViewButLay.removeAllViewsInLayout();
+        scrViewButLay.setOrientation(LinearLayout.VERTICAL);
 
-                    Button btnTable = new Button(this);
-                    btnTable.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                    btnTable.setText("Table " + index);
+        int activeTables = 0;
 
-                    final int finalI = index;
+        for(int index = 1; index <= 13; index++){
 
-                    btnTable.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            Intent intent = new Intent(context, SingleTableActivity.class);
-                            Toast.makeText(context, "Table " + finalI, Toast.LENGTH_LONG).show();
-                            VariableSingleton.currentMyTable = VariableSingleton.myTables[finalI];
-                            startActivity(intent);
-                        }
-                    });
+            if(VariableSingleton.myTables[index].isTaken()) {
+                // rows[index] = new LinearLayout(this);
+                // rows[index].setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 
-                    rows[(activeTables - 1)/3].addView(btnTable);
-                    //row.addView(btnTable);
-                    //scrViewButLay.addView(row);
-                    if(( (activeTables - 1) % 3) == 0)
-                        scrViewButLay.addView(rows[activeTables/3]);
-
+                //  myButton[index] = new Button(this);//initialize the button here
+                // myButton[index].setText("Table " + index);
+                if(activeTables % 3 == 0){
+                    rows[activeTables/3] = new LinearLayout(getActivity());
+                    rows[activeTables/3].setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                 }
-            }
+                activeTables++;
+                //LinearLayout row = new LinearLayout(this);
+                //row.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
+                Button btnTable = new Button(getActivity());
+                btnTable.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                btnTable.setText("Table " + index);
+
+
+                final int finalI = index;
+
+                btnTable.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(context, SingleTableActivity.class);
+                        Toast.makeText(context, "Table " + finalI, Toast.LENGTH_LONG).show();
+                        VariableSingleton.currentMyTable = VariableSingleton.myTables[finalI];
+                        startActivity(intent);
+                    }
+                });
+
+                rows[(activeTables - 1)/3].addView(btnTable);
+                //row.addView(btnTable);
+                //scrViewButLay.addView(row);
+                if(( (activeTables - 1) % 3) == 0)
+                    scrViewButLay.addView(rows[activeTables/3]);
+
             }
         }
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+    }
+
+    public void onResume() {
+
+        super.onResume();
+
+    }
+
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+
+    }
+
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
+}
 
 
 

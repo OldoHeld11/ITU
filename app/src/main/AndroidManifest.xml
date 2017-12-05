@@ -19,14 +19,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TablesActivity"
-            android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity"
+            android:label="@string/title_activity_single_table"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".LoginActivity"/>
         <activity
             android:name=".SingleTableActivity"
             android:label="@string/title_activity_single_table"
             android:screenOrientation="portrait"/>
-        <activity android:name=".ListActiveTablesActivity"
-            android:screenOrientation="portrait"/>
+
         <activity
             android:name=".SingleTablePayOutActivity"
             android:label="@string/title_activity_single_table_pay_out"

@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="itupos.fit.cz.itupos.ListActiveTablesActivity"
-    tools:ignore="ExtraText">
+    tools:ignore="ExtraText"
+    android:id="@+id/rl_table_of_contents2">
 
 
     <ImageView
