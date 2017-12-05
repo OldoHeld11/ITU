@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 
@@ -50,6 +51,8 @@ public class MyDialog2 extends DialogFragment{
                             VariableSingleton.currentMyTable.setFree(); // pridal Edo
                             VariableSingleton.currentMyTable.ordersPaid.getAllOrders().clear();
                             VariableSingleton.currentMyTable.ordersPaid.setTotalCost(0);
+                            Intent intent = new Intent(getActivity(), MainActivity.class);
+                            startActivity(intent);
                         }
                         RecyclerView.Adapter myAdapter = ((SingleTablePayOutActivity)getActivity()).getmAdapter();
                         myAdapter.notifyDataSetChanged();

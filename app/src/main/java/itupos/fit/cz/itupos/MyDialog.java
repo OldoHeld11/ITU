@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 
@@ -46,6 +47,8 @@ public class MyDialog extends DialogFragment{
                         RecyclerView.Adapter myAdapter = ((SingleTablePayOutActivity)getActivity()).getmAdapter();
                         myAdapter.notifyDataSetChanged();
                         ((SingleTablePayOutActivity)getActivity()).refresh();
+                        Intent intent = new Intent(getActivity(), MainActivity.class);
+                        startActivity(intent);
                     }
                 })
                 .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {

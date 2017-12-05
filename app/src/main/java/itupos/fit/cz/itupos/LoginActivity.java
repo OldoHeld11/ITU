@@ -69,12 +69,12 @@ public class LoginActivity extends AppCompatActivity {
                 }else  if (password.equals(VariableSingleton.WAITER_2) ) {
                    // VariableSingleton.myInit();
                     VariableSingleton.setName("WAITER: Oliverko");
-                    Intent intent = new Intent(context, TablesActivity.class);
+                    Intent intent = new Intent(context, MainActivity.class);
                     startActivity(intent);
                 } else  if (password.equals(VariableSingleton.WAITER_3) ) {
                 // VariableSingleton.myInit();
                 VariableSingleton.setName("ADMIN: Stulmajster");
-                Intent intent = new Intent(context, TablesActivity.class);
+                Intent intent = new Intent(context, MainActivity.class);
                 startActivity(intent);
             }  else {
                     VariableSingleton.getInstance().createToast(context);

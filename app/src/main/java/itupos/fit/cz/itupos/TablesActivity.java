@@ -63,7 +63,10 @@ public class TablesActivity extends android.support.v4.app.Fragment {
         VariableSingleton.myTables[13].setTableView((ImageView) activity.findViewById(R.id.table_13), context);
 
         for (int i = 1; i <= 13; i++) {
-            VariableSingleton.myTables[i].setFree();
+            if(VariableSingleton.myTables[i].orders.getAllOrders().isEmpty())
+                VariableSingleton.myTables[i].setFree();
+            else
+                VariableSingleton.myTables[i].setTaken();
         }
 
        /* VariableSingleton.myTables[1].setTaken();
